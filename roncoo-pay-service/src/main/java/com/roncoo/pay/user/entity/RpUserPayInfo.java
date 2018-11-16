@@ -22,15 +22,16 @@ import com.roncoo.pay.common.core.entity.BaseEntity;
 /**
  * 用户第三方支付信息实体类
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
 public class RpUserPayInfo extends BaseEntity implements Serializable {
 
-	/**
-	 * 对应关系
-	 * 微信：appid
-	 * 支付宝：partner
-	 */
+    /**
+     * 对应关系
+     * 微信：appid
+     * 支付宝：partner
+     */
     private String appId;
 
     private String appSectet;
@@ -47,18 +48,18 @@ public class RpUserPayInfo extends BaseEntity implements Serializable {
     private String userNo;
 
     private String userName;
-    
+
     /**
      * 对应关系
      * 微信：partnerkey
      * 支付宝：key
      */
     private String partnerKey;
-    
+
     private String payWayCode;
 
     private String payWayName;
-    
+
     /**
      * 支付宝线下产品appid
      */
@@ -67,61 +68,61 @@ public class RpUserPayInfo extends BaseEntity implements Serializable {
      * 支付宝私钥
      */
     private String rsaPrivateKey;
-    
+
     /**
      * 支付宝公钥
      */
     private String rsaPublicKey;
 
     public String getOfflineAppId() {
-		return offlineAppId;
-	}
+        return offlineAppId;
+    }
 
-	public void setOfflineAppId(String offlineAppId) {
-		this.offlineAppId = offlineAppId;
-	}
+    public void setOfflineAppId(String offlineAppId) {
+        this.offlineAppId = offlineAppId;
+    }
 
-	public String getRsaPrivateKey() {
-		return rsaPrivateKey;
-	}
+    public String getRsaPrivateKey() {
+        return rsaPrivateKey;
+    }
 
-	public void setRsaPrivateKey(String rsaPrivateKey) {
-		this.rsaPrivateKey = rsaPrivateKey;
-	}
+    public void setRsaPrivateKey(String rsaPrivateKey) {
+        this.rsaPrivateKey = rsaPrivateKey;
+    }
 
-	public String getRsaPublicKey() {
-		return rsaPublicKey;
-	}
+    public String getRsaPublicKey() {
+        return rsaPublicKey;
+    }
 
-	public void setRsaPublicKey(String rsaPublicKey) {
-		this.rsaPublicKey = rsaPublicKey;
-	}
+    public void setRsaPublicKey(String rsaPublicKey) {
+        this.rsaPublicKey = rsaPublicKey;
+    }
 
-	public String getPayWayCode() {
-		return payWayCode;
-	}
+    public String getPayWayCode() {
+        return payWayCode;
+    }
 
-	public void setPayWayCode(String payWayCode) {
-		this.payWayCode = payWayCode;
-	}
+    public void setPayWayCode(String payWayCode) {
+        this.payWayCode = payWayCode;
+    }
 
-	public String getPayWayName() {
-		return payWayName;
-	}
+    public String getPayWayName() {
+        return payWayName;
+    }
 
-	public void setPayWayName(String payWayName) {
-		this.payWayName = payWayName;
-	}
+    public void setPayWayName(String payWayName) {
+        this.payWayName = payWayName;
+    }
 
-	public String getPartnerKey() {
-		return partnerKey;
-	}
+    public String getPartnerKey() {
+        return partnerKey;
+    }
 
-	public void setPartnerKey(String partnerKey) {
-		this.partnerKey = partnerKey;
-	}
+    public void setPartnerKey(String partnerKey) {
+        this.partnerKey = partnerKey;
+    }
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     public String getAppId() {
         return appId;

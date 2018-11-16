@@ -23,57 +23,66 @@ import com.roncoo.pay.common.core.enums.PublicEnum;
 /**
  * 结算附件表
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
 public class RpSettRecordAnnex extends BaseEntity implements Serializable {
 
-	/** 是否删除 **/
-	private String isDelete = PublicEnum.NO.name();
+    /**
+     * 是否删除
+     **/
+    private String isDelete = PublicEnum.NO.name();
 
-	/** 附件名称 **/
-	private String annexName;
+    /**
+     * 附件名称
+     **/
+    private String annexName;
 
-	/** 附件地址 **/
-	private String annexAddress;
+    /**
+     * 附件地址
+     **/
+    private String annexAddress;
 
-	/** 结算id **/
-	private String settlementId;
+    /**
+     * 结算id
+     **/
+    private String settlementId;
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public RpSettRecordAnnex() {
-		super();
-	}
+    public RpSettRecordAnnex() {
+        super();
+    }
 
-	public String getIsDelete() {
-		return isDelete;
-	}
+    public String getIsDelete() {
+        return isDelete;
+    }
 
-	public void setIsDelete(String isDelete) {
-		this.isDelete = isDelete == null ? null : isDelete.trim();
-	}
+    public void setIsDelete(String isDelete) {
+        this.isDelete = isDelete == null ? null : isDelete.trim();
+    }
 
-	public String getAnnexName() {
-		return annexName;
-	}
+    public String getAnnexName() {
+        return annexName;
+    }
 
-	public void setAnnexName(String annexName) {
-		this.annexName = annexName == null ? null : annexName.trim();
-	}
+    public void setAnnexName(String annexName) {
+        this.annexName = annexName == null ? null : annexName.trim();
+    }
 
-	public String getAnnexAddress() {
-		return annexAddress;
-	}
+    public String getAnnexAddress() {
+        return annexAddress;
+    }
 
-	public void setAnnexAddress(String annexAddress) {
-		this.annexAddress = annexAddress == null ? null : annexAddress.trim();
-	}
+    public void setAnnexAddress(String annexAddress) {
+        this.annexAddress = annexAddress == null ? null : annexAddress.trim();
+    }
 
-	public String getSettlementId() {
-		return settlementId;
-	}
+    public String getSettlementId() {
+        return settlementId;
+    }
 
-	public void setSettlementId(String settlementId) {
-		this.settlementId = settlementId;
-	}
+    public void setSettlementId(String settlementId) {
+        this.settlementId = settlementId;
+    }
 }

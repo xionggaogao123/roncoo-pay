@@ -13,11 +13,11 @@ import java.util.Map;
  */
 public class AliPayUtil {
 
-    public static Map<String , String> parseNotifyMsg(Map<String, String[]> requestParams){
+    public static Map<String, String> parseNotifyMsg(Map<String, String[]> requestParams) {
 
-        Map<String,String> params = new HashMap<String,String>();
+        Map<String, String> params = new HashMap<String, String>();
 
-        for (Iterator iter = requestParams.keySet().iterator(); iter.hasNext();) {
+        for (Iterator iter = requestParams.keySet().iterator(); iter.hasNext(); ) {
             String name = (String) iter.next();
             String[] values = requestParams.get(name);
             String valueStr = "";

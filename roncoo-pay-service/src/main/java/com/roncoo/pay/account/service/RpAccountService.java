@@ -20,45 +20,46 @@ import com.roncoo.pay.common.core.page.PageBean;
 import com.roncoo.pay.common.core.page.PageParam;
 
 /**
- *  账户service接口
+ * 账户service接口
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
-public interface RpAccountService{
-	
-	/**
-	 * 保存
-	 */
-	void saveData(RpAccount rpAccount);
+public interface RpAccountService {
 
-	/**
-	 * 更新
-	 */
-	void updateData(RpAccount rpAccount);
+    /**
+     * 保存
+     */
+    void saveData(RpAccount rpAccount);
 
-	/**
-	 * 根据id获取数据
-	 * 
-	 * @param id
-	 * @return
-	 */
-	RpAccount getDataById(String id);
-	
+    /**
+     * 更新
+     */
+    void updateData(RpAccount rpAccount);
 
-	/**
-	 * 获取分页数据
-	 * 
-	 * @param pageParam
-	 * @return
-	 */
-	PageBean listPage(PageParam pageParam, RpAccount rpAccount);
-	
-	/**
-	 * 根据userNo获取数据
-	 * 
-	 * @param userNo
-	 * @return
-	 */
-	RpAccount getDataByUserNo(String userNo);
-	
+    /**
+     * 根据id获取数据
+     *
+     * @param id
+     * @return
+     */
+    RpAccount getDataById(String id);
+
+
+    /**
+     * 获取分页数据
+     *
+     * @param pageParam
+     * @return
+     */
+    PageBean listPage(PageParam pageParam, RpAccount rpAccount);
+
+    /**
+     * 根据userNo获取数据
+     *
+     * @param userNo
+     * @return
+     */
+    RpAccount getDataByUserNo(String userNo);
+
 }

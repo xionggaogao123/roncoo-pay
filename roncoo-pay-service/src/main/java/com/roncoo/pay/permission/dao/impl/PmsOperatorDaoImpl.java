@@ -24,29 +24,28 @@ import com.roncoo.pay.permission.entity.PmsOperator;
 
 /**
  * 权限操作员dao实现
- *
+ * <p>
  * 龙果学院：www.roncoo.com
- * 
+ *
  * @author：shenjialong
  */
 @Repository
 public class PmsOperatorDaoImpl extends PermissionBaseDaoImpl<PmsOperator> implements PmsOperatorDao {
 
-	/**
-	 * 根据操作员登录名获取操作员信息.
-	 * 
-	 * @param loginName
-	 *            .
-	 * @return operator .
-	 */
+    /**
+     * 根据操作员登录名获取操作员信息.
+     *
+     * @param loginName .
+     * @return operator .
+     */
 
-	public PmsOperator findByLoginName(String loginName) {
-		return super.getSqlSession().selectOne(getStatement("findByLoginName"), loginName);
-	}
+    public PmsOperator findByLoginName(String loginName) {
+        return super.getSqlSession().selectOne(getStatement("findByLoginName"), loginName);
+    }
 
-	@Override
-	public List<PmsOperator> listByRoleId(Long roleId) {
-		return super.getSqlSession().selectList(getStatement("listByRoleId"), roleId);
-	}
+    @Override
+    public List<PmsOperator> listByRoleId(Long roleId) {
+        return super.getSqlSession().selectList(getStatement("listByRoleId"), roleId);
+    }
 
 }

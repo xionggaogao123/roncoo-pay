@@ -22,48 +22,48 @@ import java.util.Map;
 
 /**
  * 差错处理状态 .
- *
+ * <p>
  * 龙果学院：www.roncoo.com
- * 
+ *
  * @author：shenjialong
  */
 public enum MistakeHandleStatusEnum {
 
-	HANDLED("已处理"),
+    HANDLED("已处理"),
 
-	NOHANDLE("未处理");
+    NOHANDLE("未处理");
 
-	private String desc;
+    private String desc;
 
-	private MistakeHandleStatusEnum(String desc) {
-		this.desc = desc;
-	}
+    private MistakeHandleStatusEnum(String desc) {
+        this.desc = desc;
+    }
 
-	public String getDesc() {
-		return desc;
-	}
+    public String getDesc() {
+        return desc;
+    }
 
-	public static MistakeHandleStatusEnum getEnum(String name) {
-		MistakeHandleStatusEnum[] arry = MistakeHandleStatusEnum.values();
-		for (int i = 0; i < arry.length; i++) {
-			if (arry[i].name().equals(name)) {
-				return arry[i];
-			}
-		}
-		return null;
-	}
+    public static MistakeHandleStatusEnum getEnum(String name) {
+        MistakeHandleStatusEnum[] arry = MistakeHandleStatusEnum.values();
+        for (int i = 0; i < arry.length; i++) {
+            if (arry[i].name().equals(name)) {
+                return arry[i];
+            }
+        }
+        return null;
+    }
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public static List toList() {
-		MistakeHandleStatusEnum[] ary = MistakeHandleStatusEnum.values();
-		List list = new ArrayList();
-		for (int i = 0; i < ary.length; i++) {
-			Map<String, String> map = new HashMap<String, String>();
-			map.put("desc", ary[i].getDesc());
-			map.put("name", ary[i].name());
-			list.add(map);
-		}
-		return list;
-	}
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public static List toList() {
+        MistakeHandleStatusEnum[] ary = MistakeHandleStatusEnum.values();
+        List list = new ArrayList();
+        for (int i = 0; i < ary.length; i++) {
+            Map<String, String> map = new HashMap<String, String>();
+            map.put("desc", ary[i].getDesc());
+            map.put("name", ary[i].name());
+            list.add(map);
+        }
+        return list;
+    }
 
 }

@@ -23,21 +23,26 @@ import com.roncoo.pay.common.core.exception.BizException;
 /**
  * 用户业务异常类
  * 龙果学院：www.roncoo.com
+ *
  * @author：Peter
  */
 public class UserBizException extends BizException {
 
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = -6402548375645868682L;
+     *
+     */
+    private static final long serialVersionUID = -6402548375645868682L;
 
-	/** 用户不存在 **/
+    /**
+     * 用户不存在
+     **/
     public static final int USER_IS_NULL = 101;
 
-    /** 用户支付配置有误 **/
+    /**
+     * 用户支付配置有误
+     **/
     public static final int USER_PAY_CONFIG_ERRPR = 102;
-    
+
     public static final UserBizException USER_BANK_ACCOUNT_IS_NULL = new UserBizException(10010002, "用户未设置银行账户信息!");
 
     private static final Log LOG = LogFactory.getLog(UserBizException.class);

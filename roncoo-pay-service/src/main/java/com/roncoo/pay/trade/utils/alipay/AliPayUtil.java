@@ -172,7 +172,7 @@ public class AliPayUtil {
             if (resultSign.equals(sign)) {
                 Map<String, Object> resultMap = new HashMap<>();
                 resultMap.putAll(responseMap);
-                resultMap.put("is_success",document.getRootElement().element("is_success").getText());
+                resultMap.put("is_success", document.getRootElement().element("is_success").getText());
                 return resultMap;
             } else {
                 logger.info("支付宝--订单查询验签不通过:{},返回签名:[{}],返回报文签名:[{}]", sign, resultSign);

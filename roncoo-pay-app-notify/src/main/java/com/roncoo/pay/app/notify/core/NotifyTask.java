@@ -33,8 +33,9 @@ import java.util.concurrent.TimeUnit;
 /**
  * <b>功能说明:
  * </b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
 public class NotifyTask implements Runnable, Delayed {
 
@@ -81,14 +82,14 @@ public class NotifyTask implements Runnable, Delayed {
         Integer notifyTimes = notifyRecord.getNotifyTimes();
         // 去通知
         try {
-            LOG.info("Notify Url " + notifyRecord.getUrl()+" ;notify id:"+notifyRecord.getId()+";notify times:"+notifyRecord.getNotifyTimes());
+            LOG.info("Notify Url " + notifyRecord.getUrl() + " ;notify id:" + notifyRecord.getId() + ";notify times:" + notifyRecord.getNotifyTimes());
 
             /** 采用 httpClient */
             SimpleHttpParam param = new SimpleHttpParam(notifyRecord.getUrl());
             SimpleHttpResult result = SimpleHttpUtils.httpRequest(param);
 
 			/*
-			 * OkHttpClient client = new OkHttpClient(); Request request = new
+             * OkHttpClient client = new OkHttpClient(); Request request = new
 			 * Request.Builder().url(notifyRecord.getUrl()).build(); Response
 			 * response = client.newCall(request).execute();
 			 */
@@ -115,7 +116,7 @@ public class NotifyTask implements Runnable, Delayed {
                             NotifyStatusEnum.HTTP_REQUEST_SUCCESS.name());
 
                 }
-                LOG.info("Update NotifyRecord:" + JSONObject.toJSONString(notifyRecord)+";responseMsg:"+responseMsg);
+                LOG.info("Update NotifyRecord:" + JSONObject.toJSONString(notifyRecord) + ";responseMsg:" + responseMsg);
             } else {
                 notifyQueue.addElementToList(notifyRecord);
                 // 再次放到通知列表中，由添加程序判断是否已经通知完毕或者通知失败

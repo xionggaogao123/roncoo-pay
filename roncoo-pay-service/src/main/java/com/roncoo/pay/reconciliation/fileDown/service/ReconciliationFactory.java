@@ -20,20 +20,20 @@ import java.util.Date;
 
 /**
  * 该接口是用来对外开放的银行相关业务接口
- *
+ * <p>
  * 龙果学院：www.roncoo.com
- * 
+ *
  * @author：shenjialong
  */
 public interface ReconciliationFactory {
 
-	/**
-	 * 对账文件下载
-	 * 
-	 * @param payInterface
-	 * @param fileDate
-	 * @return
-	 */
-	File fileDown(String payInterface, Date billDate) throws Exception;
+    /**
+     * 对账文件下载
+     *
+     * @param payInterface
+     * @param fileDate
+     * @return
+     */
+    File fileDown(String payInterface, Date billDate) throws Exception;
 
 }

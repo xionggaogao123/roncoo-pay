@@ -32,8 +32,9 @@ import java.util.Map;
 /**
  * <b>功能说明:
  * </b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
 @Component
 public class NotifyQueue implements Serializable {
@@ -50,6 +51,7 @@ public class NotifyQueue implements Serializable {
 
     @Autowired
     private NotifyPersist notifyPersist;
+
     /**
      * 将传过来的对象进行通知次数判断，之后决定是否放在任务队列中
      *

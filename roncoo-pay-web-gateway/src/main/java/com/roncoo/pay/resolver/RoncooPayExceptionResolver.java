@@ -50,7 +50,7 @@ public class RoncooPayExceptionResolver implements HandlerExceptionResolver {
 
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put("errorMsg", bizException.getMsg());//将错误信息传递给view
-                return new ModelAndView("exception/exception",map);
+                return new ModelAndView("exception/exception", map);
             } catch (IOException e) {
                 LOG.error("系统异常:", e);
 

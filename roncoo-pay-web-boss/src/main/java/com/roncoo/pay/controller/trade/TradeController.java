@@ -38,6 +38,7 @@ import com.roncoo.pay.user.enums.FundInfoTypeEnum;
 /**
  * 交易管理
  * 龙果学院：www.roncoo.com
+ *
  * @author：Peter
  */
 @Controller
@@ -46,9 +47,10 @@ public class TradeController {
 
     @Autowired
     private RpTradePaymentQueryService rpTradePaymentQueryService;
+
     @RequiresPermissions("trade:order:view")
-    @RequestMapping(value = "/listPaymentOrder", method ={RequestMethod.POST,RequestMethod.GET})
-    public String listPaymentOrder(HttpServletRequest request,PaymentOrderQueryParam paymentOrderQueryParam,PageParam pageParam, Model model) {
+    @RequestMapping(value = "/listPaymentOrder", method = {RequestMethod.POST, RequestMethod.GET})
+    public String listPaymentOrder(HttpServletRequest request, PaymentOrderQueryParam paymentOrderQueryParam, PageParam pageParam, Model model) {
         PageBean pageBean = rpTradePaymentQueryService.listPaymentOrderPage(pageParam, paymentOrderQueryParam);
         model.addAttribute("pageBean", pageBean);
         model.addAttribute("pageParam", pageParam);
@@ -63,8 +65,8 @@ public class TradeController {
     }
 
     @RequiresPermissions("trade:record:view")
-    @RequestMapping(value = "/listPaymentRecord", method ={RequestMethod.POST,RequestMethod.GET})
-    public String listPaymentRecord(HttpServletRequest request,PaymentOrderQueryParam paymentOrderQueryParam,PageParam pageParam, Model model) {
+    @RequestMapping(value = "/listPaymentRecord", method = {RequestMethod.POST, RequestMethod.GET})
+    public String listPaymentRecord(HttpServletRequest request, PaymentOrderQueryParam paymentOrderQueryParam, PageParam pageParam, Model model) {
         PageBean pageBean = rpTradePaymentQueryService.listPaymentRecordPage(pageParam, paymentOrderQueryParam);
         model.addAttribute("pageBean", pageBean);
         model.addAttribute("pageParam", pageParam);

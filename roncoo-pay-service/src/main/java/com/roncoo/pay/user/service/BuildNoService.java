@@ -16,25 +16,36 @@
 package com.roncoo.pay.user.service;
 
 /**
- *  生成编号service接口
+ * 生成编号service接口
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
 public interface BuildNoService {
 
-	/** 获取用户编号 **/
-	String buildUserNo();
+    /**
+     * 获取用户编号
+     **/
+    String buildUserNo();
 
-	/** 获取账户编号 **/
-	String buildAccountNo();
+    /**
+     * 获取账户编号
+     **/
+    String buildAccountNo();
 
-	/** 获取支付流水号 **/
-	String buildTrxNo();
+    /**
+     * 获取支付流水号
+     **/
+    String buildTrxNo();
 
-	/** 获取银行订单号 **/
-	String buildBankOrderNo();
+    /**
+     * 获取银行订单号
+     **/
+    String buildBankOrderNo();
 
-	/** 获取对账批次号 **/
-	String buildReconciliationNo();
+    /**
+     * 获取对账批次号
+     **/
+    String buildReconciliationNo();
 
 }

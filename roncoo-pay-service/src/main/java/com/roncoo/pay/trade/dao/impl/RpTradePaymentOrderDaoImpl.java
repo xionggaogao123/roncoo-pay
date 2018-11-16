@@ -26,24 +26,26 @@ import java.util.Map;
 
 /**
  * <b>功能说明:商户支付订单,dao层实现类</b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
 @Repository("rpTradePaymentOrderDao")
-public class RpTradePaymentOrderDaoImpl extends BaseDaoImpl<RpTradePaymentOrder> implements RpTradePaymentOrderDao{
+public class RpTradePaymentOrderDaoImpl extends BaseDaoImpl<RpTradePaymentOrder> implements RpTradePaymentOrderDao {
 
 
     /**
      * 根据商户编号及商户订单号获取支付订单信息
-     * @param merchantNo    商户编号
-     * @param merchantOrderNo   商户订单号
+     *
+     * @param merchantNo      商户编号
+     * @param merchantOrderNo 商户订单号
      * @return
      */
     @Override
     public RpTradePaymentOrder selectByMerchantNoAndMerchantOrderNo(String merchantNo, String merchantOrderNo) {
-        Map<String , Object> paramMap = new HashMap<String , Object>();
-        paramMap.put("merchantNo",merchantNo);
-        paramMap.put("merchantOrderNo",merchantOrderNo);
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("merchantNo", merchantNo);
+        paramMap.put("merchantOrderNo", merchantOrderNo);
         return super.getBy(paramMap);
     }
 

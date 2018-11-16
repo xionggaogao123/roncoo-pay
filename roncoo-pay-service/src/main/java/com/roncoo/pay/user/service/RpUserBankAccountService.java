@@ -20,28 +20,30 @@ import com.roncoo.pay.user.entity.RpUserBankAccount;
 /**
  * 用户银行账户service接口
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
-public interface RpUserBankAccountService{
-	
-	/**
-	 * 保存
-	 */
-	void saveData(RpUserBankAccount rpUserBankAccount);
+public interface RpUserBankAccountService {
 
-	/**
-	 * 更新
-	 */
-	void updateData(RpUserBankAccount rpUserBankAccount);
+    /**
+     * 保存
+     */
+    void saveData(RpUserBankAccount rpUserBankAccount);
 
-	/**
-	 * 根据用户编号获取银行账户
-	 */
-	RpUserBankAccount getByUserNo(String userNo);
+    /**
+     * 更新
+     */
+    void updateData(RpUserBankAccount rpUserBankAccount);
 
-	/**
-	 * 创建或更新
-	 * @param rpUserBankAccount
-	 */
-	void createOrUpdate(RpUserBankAccount rpUserBankAccount);
+    /**
+     * 根据用户编号获取银行账户
+     */
+    RpUserBankAccount getByUserNo(String userNo);
+
+    /**
+     * 创建或更新
+     *
+     * @param rpUserBankAccount
+     */
+    void createOrUpdate(RpUserBankAccount rpUserBankAccount);
 }

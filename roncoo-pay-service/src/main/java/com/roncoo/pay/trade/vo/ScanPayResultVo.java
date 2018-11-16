@@ -21,8 +21,9 @@ import java.math.BigDecimal;
 /**
  * <b>功能说明:扫码支付结果展示实体
  * </b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
 public class ScanPayResultVo implements Serializable {
 
@@ -31,10 +32,14 @@ public class ScanPayResultVo implements Serializable {
      */
     private String payWayCode;
 
-    /** 金额 **/
+    /**
+     * 金额
+     **/
     private BigDecimal orderAmount;
 
-    /** 产品名称 **/
+    /**
+     * 产品名称
+     **/
     private String productName;
 
     /**

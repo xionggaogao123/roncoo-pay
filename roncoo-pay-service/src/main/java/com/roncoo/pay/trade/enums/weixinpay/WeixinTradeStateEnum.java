@@ -22,14 +22,17 @@ import java.util.Map;
 
 /**
  * <b>功能说明:微信订单状态枚举类</b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
 public enum WeixinTradeStateEnum {
 
-    SUCCESS ("成功"),FAIL("失败");
+    SUCCESS("成功"), FAIL("失败");
 
-    /** 描述 */
+    /**
+     * 描述
+     */
     private String desc;
 
     private WeixinTradeStateEnum(String desc) {
@@ -56,7 +59,7 @@ public enum WeixinTradeStateEnum {
         return enumMap;
     }
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @SuppressWarnings({"rawtypes", "unchecked"})
     public static List toList() {
         WeixinTradeStateEnum[] ary = WeixinTradeStateEnum.values();
         List list = new ArrayList();

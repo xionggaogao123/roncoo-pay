@@ -24,8 +24,9 @@ import java.util.Properties;
 /**
  * <b>功能说明:微信属性文件工具类
  * </b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
 public class WeixinConfigUtil {
 
@@ -54,9 +55,9 @@ public class WeixinConfigUtil {
     /**
      * 函数功能说明 ：读取配置项 Administrator 2012-12-14 修改者名字 ： 修改日期 ： 修改内容 ：
      *
-     * @参数：
      * @return void
      * @throws
+     * @参数：
      */
     public static String readConfig(String key) {
         return (String) properties.get(key);

@@ -24,8 +24,8 @@ import com.roncoo.pay.user.entity.RpUserInfo;
 /**
  * 用户信息dao实现类
  * 龙果学院：www.roncoo.com
- * @author：zenghao
+ *
  */
 @Repository
-public class RpUserInfoDaoImpl  extends BaseDaoImpl<RpUserInfo> implements RpUserInfoDao{
+public class RpUserInfoDaoImpl extends BaseDaoImpl<RpUserInfo> implements RpUserInfoDao {
 }

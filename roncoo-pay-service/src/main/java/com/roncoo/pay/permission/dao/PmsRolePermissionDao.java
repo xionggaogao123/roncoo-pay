@@ -21,31 +21,30 @@ import com.roncoo.pay.permission.entity.PmsRolePermission;
 
 /**
  * 角色权限dao
- *
+ * <p>
  * 龙果学院：www.roncoo.com
- * 
+ *
  * @author：shenjialong
  */
 public interface PmsRolePermissionDao extends PermissionBaseDao<PmsRolePermission> {
 
-	/**
-	 * 根据角色ID找到角色关联的权限点.
-	 * 
-	 * @param roleId
-	 *            .
-	 * @return rolePermissionList .
-	 */
-	public List<PmsRolePermission> listByRoleId(final long roleId);
+    /**
+     * 根据角色ID找到角色关联的权限点.
+     *
+     * @param roleId .
+     * @return rolePermissionList .
+     */
+    public List<PmsRolePermission> listByRoleId(final long roleId);
 
-	/**
-	 * 根据角色ID字符串获取相应角色-权限关联信息.
-	 * 
-	 * @param roleIds
-	 * @return
-	 */
-	public List<PmsRolePermission> listByRoleIds(String roleIdsStr);
+    /**
+     * 根据角色ID字符串获取相应角色-权限关联信息.
+     *
+     * @param roleIds
+     * @return
+     */
+    public List<PmsRolePermission> listByRoleIds(String roleIdsStr);
 
-	public void deleteByRoleIdAndPermissionId(Long roleId, Long permissionId);
-	
-	public void deleteByRoleId(Long roleId);
+    public void deleteByRoleIdAndPermissionId(Long roleId, Long permissionId);
+
+    public void deleteByRoleId(Long roleId);
 }

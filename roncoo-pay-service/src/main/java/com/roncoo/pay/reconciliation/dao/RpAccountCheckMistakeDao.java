@@ -20,9 +20,8 @@ import com.roncoo.pay.reconciliation.entity.RpAccountCheckMistake;
 
 /**
  * 对账差错dao接口
- *
  * 龙果学院：www.roncoo.com
- * 
+ *
  * @author：shenjialong
  */
 public interface RpAccountCheckMistakeDao extends BaseDao<RpAccountCheckMistake> {

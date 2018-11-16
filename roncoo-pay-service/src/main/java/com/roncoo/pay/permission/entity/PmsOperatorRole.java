@@ -12,60 +12,60 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */package com.roncoo.pay.permission.entity;
+ */
+package com.roncoo.pay.permission.entity;
 
 /**
- * 
  * 权限管理-角色,操作员关联表..
- *
+ * <p>
  * 龙果学院：www.roncoo.com
- * 
+ *
  * @author：shenjialong
  */
 public class PmsOperatorRole extends PermissionBaseEntity {
 
-	private static final long serialVersionUID = 174356028197753020L;
-	private Long roleId;// 角色ID
-	private Long operatorId;// /操作员ID
+    private static final long serialVersionUID = 174356028197753020L;
+    private Long roleId;// 角色ID
+    private Long operatorId;// /操作员ID
 
-	/**
-	 * 角色ID
-	 * 
-	 * @return
-	 */
-	public Long getRoleId() {
-		return roleId;
-	}
+    /**
+     * 角色ID
+     *
+     * @return
+     */
+    public Long getRoleId() {
+        return roleId;
+    }
 
-	/**
-	 * 角色ID
-	 * 
-	 * @return
-	 */
-	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
-	}
+    /**
+     * 角色ID
+     *
+     * @return
+     */
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
 
-	/**
-	 * 操作员ID
-	 * 
-	 * @return
-	 */
-	public Long getOperatorId() {
-		return operatorId;
-	}
+    /**
+     * 操作员ID
+     *
+     * @return
+     */
+    public Long getOperatorId() {
+        return operatorId;
+    }
 
-	/**
-	 * 操作员ID
-	 * 
-	 * @return
-	 */
-	public void setOperatorId(Long operatorId) {
-		this.operatorId = operatorId;
-	}
+    /**
+     * 操作员ID
+     *
+     * @return
+     */
+    public void setOperatorId(Long operatorId) {
+        this.operatorId = operatorId;
+    }
 
-	public PmsOperatorRole() {
+    public PmsOperatorRole() {
 
-	}
+    }
 
 }

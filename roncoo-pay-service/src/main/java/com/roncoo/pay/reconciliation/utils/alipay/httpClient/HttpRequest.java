@@ -15,10 +15,14 @@ import org.apache.commons.httpclient.NameValuePair;
 
 public class HttpRequest {
 
-    /** HTTP GET method */
+    /**
+     * HTTP GET method
+     */
     public static final String METHOD_GET = "GET";
 
-    /** HTTP POST method */
+    /**
+     * HTTP POST method
+     */
     public static final String METHOD_POST = "POST";
 
     /**

@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * <b>功能说明:
- *      该控制类用来支撑商户查询订单结果
+ * 该控制类用来支撑商户查询订单结果
  * </b>
  *
  * @author Peter
@@ -34,7 +34,7 @@ import javax.servlet.http.HttpServletResponse;
 public class MerchantOrderQueryController {
 
     @RequestMapping
-    public void singleOrderQuery(HttpServletRequest httpServletRequest , HttpServletResponse httpServletResponse){
+    public void singleOrderQuery(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 
     }
 }

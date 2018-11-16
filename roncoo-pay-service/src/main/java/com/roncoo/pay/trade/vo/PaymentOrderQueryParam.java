@@ -21,37 +21,56 @@ import java.util.Date;
 /**
  * <b>功能说明:支付订单查询条件实体
  * </b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
 
-public class PaymentOrderQueryParam implements Serializable{
+public class PaymentOrderQueryParam implements Serializable {
 
-    /** 商户编号 **/
+    /**
+     * 商户编号
+     **/
     private String merchantNo;
 
-    /** 商户名称 **/
+    /**
+     * 商户名称
+     **/
     private String merchantName;
 
-    /** 商户订单号 **/
+    /**
+     * 商户订单号
+     **/
     private String merchantOrderNo;
 
-    /** 订单日期开始时间 **/
+    /**
+     * 订单日期开始时间
+     **/
     private String orderDateBegin;
 
-    /** 订单日期结束时间 **/
+    /**
+     * 订单日期结束时间
+     **/
     private String orderDateEnd;
 
-    /** 支付方式 **/
+    /**
+     * 支付方式
+     **/
     private String payWayName;
 
-    /** 支付类型 **/
+    /**
+     * 支付类型
+     **/
     private String payTypeName;
 
-    /** 资金流入类型 **/
+    /**
+     * 资金流入类型
+     **/
     private String fundIntoType;
 
-    /** 状态 **/
+    /**
+     * 状态
+     **/
     private String status;
 
     public String getMerchantNo() {

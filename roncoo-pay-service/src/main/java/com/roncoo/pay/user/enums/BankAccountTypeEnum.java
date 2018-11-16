@@ -23,6 +23,7 @@ import java.util.Map;
 /**
  * 银行账户类型
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
 public enum BankAccountTypeEnum {
@@ -30,7 +31,9 @@ public enum BankAccountTypeEnum {
     PUBLIC_ACCOUNT("对公帐户"),
     PRIVATE_DEBIT_ACCOUNT("对私借记卡");
 
-    /** 描述 */
+    /**
+     * 描述
+     */
     private String desc;
 
     private BankAccountTypeEnum(String desc) {
@@ -58,7 +61,7 @@ public enum BankAccountTypeEnum {
         return enumMap;
     }
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @SuppressWarnings({"rawtypes", "unchecked"})
     public static List toList() {
         BankAccountTypeEnum[] ary = BankAccountTypeEnum.values();
         List list = new ArrayList();
@@ -71,16 +74,16 @@ public enum BankAccountTypeEnum {
         return list;
     }
 
-    
+
     public static BankAccountTypeEnum getEnum(String enumName) {
-		BankAccountTypeEnum resultEnum = null;
-		BankAccountTypeEnum[] enumAry = BankAccountTypeEnum.values();
-		for (int i = 0; i < enumAry.length; i++) {
-			if (enumAry[i].name().equals(enumName)) {
-				resultEnum = enumAry[i];
-				break;
-			}
-		}
-		return resultEnum;
-	}
+        BankAccountTypeEnum resultEnum = null;
+        BankAccountTypeEnum[] enumAry = BankAccountTypeEnum.values();
+        for (int i = 0; i < enumAry.length; i++) {
+            if (enumAry[i].name().equals(enumName)) {
+                resultEnum = enumAry[i];
+                break;
+            }
+        }
+        return resultEnum;
+    }
 }

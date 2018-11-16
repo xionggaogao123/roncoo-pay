@@ -24,104 +24,167 @@ import java.util.Date;
 
 /**
  * <b>功能说明:商户支付订单实体类</b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
 public class RpTradePaymentOrder extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /** 商品名称 **/
+    /**
+     * 商品名称
+     **/
     private String productName;
 
-    /** 商户订单编号 **/
+    /**
+     * 商户订单编号
+     **/
     private String merchantOrderNo;
 
-    /** 订单金额 **/
+    /**
+     * 订单金额
+     **/
     private BigDecimal orderAmount;
 
-    /** 订单来源 **/
+    /**
+     * 订单来源
+     **/
     private String orderFrom;
 
-    /** 商户名称 **/
+    /**
+     * 商户名称
+     **/
     private String merchantName;
 
-    /** 商户编号 **/
+    /**
+     * 商户编号
+     **/
     private String merchantNo;
 
-    /** 订单时间 **/
+    /**
+     * 订单时间
+     **/
     private Date orderTime;
 
-    /** 订单日期 **/
+    /**
+     * 订单日期
+     **/
     private Date orderDate;
 
-    /** 订单来源IP **/
+    /**
+     * 订单来源IP
+     **/
     private String orderIp;
 
-    /** 页面链接 **/
+    /**
+     * 页面链接
+     **/
     private String orderRefererUrl;
 
-    /** 页面回调通知地址 **/
+    /**
+     * 页面回调通知地址
+     **/
     private String returnUrl;
 
-    /** 后台异步通知地址 **/
+    /**
+     * 后台异步通知地址
+     **/
     private String notifyUrl;
 
-    /** 订单撤销原因 **/
+    /**
+     * 订单撤销原因
+     **/
     private String cancelReason;
 
-    /** 订单有效期 **/
+    /**
+     * 订单有效期
+     **/
     private Integer orderPeriod;
 
-    /** 订单到期时间 **/
+    /**
+     * 订单到期时间
+     **/
     private Date expireTime;
 
-    /** 支付通道编号 **/
+    /**
+     * 支付通道编号
+     **/
     private String payWayCode;
 
-    /** 支付方式名称 **/
+    /**
+     * 支付方式名称
+     **/
     private String payWayName;
 
-    /** 备注 **/
+    /**
+     * 备注
+     **/
     private String remark;
 
-    /** 交易业务类型 **/
+    /**
+     * 交易业务类型
+     **/
     private String trxType;
 
-    /** 支付流水 **/
+    /**
+     * 支付流水
+     **/
     private String trxNo;
 
-    /** 支付方式类型编码 **/
+    /**
+     * 支付方式类型编码
+     **/
     private String payTypeCode;
 
-    /** 支付方式类型名称 **/
+    /**
+     * 支付方式类型名称
+     **/
     private String payTypeName;
 
-    /** 资金流入类型 **/
+    /**
+     * 资金流入类型
+     **/
     private String fundIntoType;
 
-    /** 是否退款 **/
+    /**
+     * 是否退款
+     **/
     private String isRefund = PublicEnum.NO.name();
 
-    /** 退款次数 **/
+    /**
+     * 退款次数
+     **/
     private Short refundTimes;
 
-    /** 成功退款金额 **/
+    /**
+     * 成功退款金额
+     **/
     private BigDecimal successRefundAmount;
 
-    /** 扩展字段1 **/
+    /**
+     * 扩展字段1
+     **/
     private String field1;
 
-    /** 扩展字段2 **/
+    /**
+     * 扩展字段2
+     **/
     private String field2;
 
-    /** 扩展字段3 **/
+    /**
+     * 扩展字段3
+     **/
     private String field3;
 
-    /** 扩展字段4 **/
+    /**
+     * 扩展字段4
+     **/
     private String field4;
 
-    /** 扩展字段5 **/
+    /**
+     * 扩展字段5
+     **/
     private String field5;
 
     public String getProductName() {

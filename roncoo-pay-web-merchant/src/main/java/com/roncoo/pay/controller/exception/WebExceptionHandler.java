@@ -29,35 +29,36 @@ import com.roncoo.pay.common.core.exception.BizException;
 /**
  * Spring异常拦截器.
  * 龙果学院：www.roncoo.com
+ *
  * @author zenghao
  */
 @ControllerAdvice
 public class WebExceptionHandler {
 
-	private static final Log LOG = LogFactory.getLog(WebExceptionHandler.class);
+    private static final Log LOG = LogFactory.getLog(WebExceptionHandler.class);
 
-	/**
-	 * 业务异常
-	 * <p/>
-	 * 后续根据不同的需求定制即可
-	 */
-	@ExceptionHandler({ BizException.class })
-	@ResponseStatus(HttpStatus.OK)
-	public String processBizException(HttpServletRequest request, BizException e) {
-		LOG.error("BizException", e);
-		request.setAttribute("msg", e.getMsg());
-		return "common/error";
-	}
+    /**
+     * 业务异常
+     * <p/>
+     * 后续根据不同的需求定制即可
+     */
+    @ExceptionHandler({BizException.class})
+    @ResponseStatus(HttpStatus.OK)
+    public String processBizException(HttpServletRequest request, BizException e) {
+        LOG.error("BizException", e);
+        request.setAttribute("msg", e.getMsg());
+        return "common/error";
+    }
 
-	/**
-	 * 总异常
-	 */
-	@ExceptionHandler({ Exception.class })
-	@ResponseStatus(HttpStatus.OK)
-	public String processException(Exception e, HttpServletRequest request) {
-		LOG.error("Exception", e);
-		request.setAttribute("msg", "系统异常");
-		return "common/error";
-	}
+    /**
+     * 总异常
+     */
+    @ExceptionHandler({Exception.class})
+    @ResponseStatus(HttpStatus.OK)
+    public String processException(Exception e, HttpServletRequest request) {
+        LOG.error("Exception", e);
+        request.setAttribute("msg", "系统异常");
+        return "common/error";
+    }
 
 }

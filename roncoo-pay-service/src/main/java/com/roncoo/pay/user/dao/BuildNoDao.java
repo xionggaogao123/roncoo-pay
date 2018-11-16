@@ -21,6 +21,7 @@ import com.roncoo.pay.user.entity.SeqBuild;
 /**
  * 生成编号dao
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
 public interface BuildNoDao extends BaseDao<SeqBuild> {

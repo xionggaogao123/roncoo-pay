@@ -1,6 +1,7 @@
 package com.roncoo.pay.trade.utils.alipay.util.httpClient;
 
 import org.apache.commons.httpclient.HttpException;
+
 import java.io.IOException;
 import java.net.UnknownHostException;
 
@@ -18,6 +19,7 @@ import org.apache.commons.httpclient.methods.multipart.MultipartRequestEntity;
 import org.apache.commons.httpclient.methods.multipart.Part;
 import org.apache.commons.httpclient.methods.multipart.StringPart;
 import org.apache.commons.httpclient.params.HttpMethodParams;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,34 +37,42 @@ import java.util.List;
 
 public class HttpProtocolHandler {
 
-    private static String              DEFAULT_CHARSET                     = "GBK";
+    private static String DEFAULT_CHARSET = "GBK";
 
-    /** 连接超时时间，由bean factory设置，缺省为8秒钟 */
-    private int                        defaultConnectionTimeout            = 8000;
+    /**
+     * 连接超时时间，由bean factory设置，缺省为8秒钟
+     */
+    private int defaultConnectionTimeout = 8000;
 
-    /** 回应超时时间, 由bean factory设置，缺省为30秒钟 */
-    private int                        defaultSoTimeout                    = 30000;
+    /**
+     * 回应超时时间, 由bean factory设置，缺省为30秒钟
+     */
+    private int defaultSoTimeout = 30000;
 
-    /** 闲置连接超时时间, 由bean factory设置，缺省为60秒钟 */
-    private int                        defaultIdleConnTimeout              = 60000;
+    /**
+     * 闲置连接超时时间, 由bean factory设置，缺省为60秒钟
+     */
+    private int defaultIdleConnTimeout = 60000;
 
-    private int                        defaultMaxConnPerHost               = 30;
+    private int defaultMaxConnPerHost = 30;
 
-    private int                        defaultMaxTotalConn                 = 80;
+    private int defaultMaxTotalConn = 80;
 
-    /** 默认等待HttpConnectionManager返回连接超时（只有在达到最大连接数时起作用）：1秒*/
-    private static final long          defaultHttpConnectionManagerTimeout = 3 * 1000;
+    /**
+     * 默认等待HttpConnectionManager返回连接超时（只有在达到最大连接数时起作用）：1秒
+     */
+    private static final long defaultHttpConnectionManagerTimeout = 3 * 1000;
 
     /**
      * HTTP连接管理器，该连接管理器必须是线程安全的.
      */
-    private HttpConnectionManager      connectionManager;
+    private HttpConnectionManager connectionManager;
 
-    private static HttpProtocolHandler httpProtocolHandler                 = new HttpProtocolHandler();
+    private static HttpProtocolHandler httpProtocolHandler = new HttpProtocolHandler();
 
     /**
      * 工厂方法
-     * 
+     *
      * @return
      */
     public static HttpProtocolHandler getInstance() {
@@ -87,12 +97,12 @@ public class HttpProtocolHandler {
 
     /**
      * 执行Http请求
-     * 
-     * @param request 请求数据
+     *
+     * @param request         请求数据
      * @param strParaFileName 文件类型的参数名
-     * @param strFilePath 文件路径
-     * @return 
-     * @throws HttpException, IOException 
+     * @param strFilePath     文件路径
+     * @return
+     * @throws HttpException, IOException
      */
     public HttpResponse execute(HttpRequest request, String strParaFileName, String strFilePath) throws HttpException, IOException {
         HttpClient httpclient = new HttpClient(connectionManager);
@@ -125,22 +135,21 @@ public class HttpProtocolHandler {
 
             // parseNotifyConfig会保证使用GET方法时，request一定使用QueryString
             method.setQueryString(request.getQueryString());
-        } else if(strParaFileName.equals("") && strFilePath.equals("")) {
-        	//post模式且不带上传文件
+        } else if (strParaFileName.equals("") && strFilePath.equals("")) {
+            //post模式且不带上传文件
             method = new PostMethod(request.getUrl());
             ((PostMethod) method).addParameters(request.getParameters());
             method.addRequestHeader("Content-Type", "application/x-www-form-urlencoded; text/html; charset=" + charset);
-        }
-        else {
-        	//post模式且带上传文件
+        } else {
+            //post模式且带上传文件
             method = new PostMethod(request.getUrl());
             List<Part> parts = new ArrayList<Part>();
             for (int i = 0; i < request.getParameters().length; i++) {
-            	parts.add(new StringPart(request.getParameters()[i].getName(), request.getParameters()[i].getValue(), charset));
+                parts.add(new StringPart(request.getParameters()[i].getName(), request.getParameters()[i].getValue(), charset));
             }
             //增加文件参数，strParaFileName是参数名，使用本地文件
             parts.add(new FilePart(strParaFileName, new FilePartSource(new File(strFilePath))));
-            
+
             // 设置请求体
             ((PostMethod) method).setRequestEntity(new MultipartRequestEntity(parts.toArray(new Part[0]), new HttpMethodParams()));
         }
@@ -174,7 +183,7 @@ public class HttpProtocolHandler {
 
     /**
      * 将NameValuePairs数组转变为字符串
-     * 
+     *
      * @param nameValues
      * @return
      */

@@ -23,6 +23,7 @@ import com.roncoo.pay.common.core.enums.PublicEnum;
 /**
  * 支付产品实体类
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
 public class RpPayProduct extends BaseEntity implements Serializable {
@@ -30,7 +31,7 @@ public class RpPayProduct extends BaseEntity implements Serializable {
     private String productCode;
 
     private String productName;
-    
+
     private String auditStatus;
 
     private static final long serialVersionUID = 1L;
@@ -58,8 +59,8 @@ public class RpPayProduct extends BaseEntity implements Serializable {
     public void setAuditStatus(String auditStatus) {
         this.auditStatus = auditStatus == null ? null : auditStatus.trim();
     }
-    
+
     public String getAuditStatusDesc() {
-    	return PublicEnum.getEnum(this.getAuditStatus()).getDesc();
+        return PublicEnum.getEnum(this.getAuditStatus()).getDesc();
     }
 }

@@ -9,24 +9,34 @@ package com.roncoo.pay.trade.entity;
  */
 public class RoncooPayGoodsDetails {
 
-    /** 构造函数 传入所需参数 **/
-    public RoncooPayGoodsDetails (String goodsId , String goodsName ,Long singlePrice , Integer nums){
+    /**
+     * 构造函数 传入所需参数
+     **/
+    public RoncooPayGoodsDetails(String goodsId, String goodsName, Long singlePrice, Integer nums) {
         this.goodsId = goodsId;
         this.goodsName = goodsName;
         this.singlePrice = singlePrice;
         this.nums = nums;
     }
 
-    /** 商品ID **/
+    /**
+     * 商品ID
+     **/
     private String goodsId;
 
-    /** 名称 **/
+    /**
+     * 名称
+     **/
     private String goodsName;
 
-    /** 单价 **/
+    /**
+     * 单价
+     **/
     private Long singlePrice;
 
-    /** 数量 **/
+    /**
+     * 数量
+     **/
     private Integer nums;
 
     public String getGoodsId() {

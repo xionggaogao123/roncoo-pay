@@ -35,59 +35,60 @@ import com.roncoo.pay.user.service.RpUserInfoService;
 /**
  * 账户信息
  * 龙果学院：www.roncoo.com
+ *
  * @author zenghao
  */
 @Controller
 @RequestMapping("/account")
 public class AccountController {
-	@Autowired
-	private RpAccountService rpAccountService;
-	@Autowired
-	private RpUserInfoService rpUserInfoService;
-	@Autowired
-	private RpAccountHistoryService rpAccountHistoryService;
+    @Autowired
+    private RpAccountService rpAccountService;
+    @Autowired
+    private RpUserInfoService rpUserInfoService;
+    @Autowired
+    private RpAccountHistoryService rpAccountHistoryService;
 
-	/**
-	 * 函数功能说明 ： 查询账户信息
-	 * 
-	 * @参数： @return
-	 * @return String
-	 * @throws
-	 */
-	@RequestMapping(value = "/list", method ={RequestMethod.POST,RequestMethod.GET})
-	public String list(RpAccount rpAccount,PageParam pageParam, Model model) {
-		PageBean pageBean = rpAccountService.listPage(pageParam, rpAccount);
-		List<Object> recordList = pageBean.getRecordList();
-		for(Object obj : recordList){
-			RpAccount account = (RpAccount)obj;
-			RpUserInfo userInfo = rpUserInfoService.getDataByMerchentNo(account.getUserNo());
-			account.setUserName(userInfo.getUserName());
-		}
-		model.addAttribute("pageBean", pageBean);
+    /**
+     * 函数功能说明 ： 查询账户信息
+     *
+     * @return String
+     * @throws
+     * @参数： @return
+     */
+    @RequestMapping(value = "/list", method = {RequestMethod.POST, RequestMethod.GET})
+    public String list(RpAccount rpAccount, PageParam pageParam, Model model) {
+        PageBean pageBean = rpAccountService.listPage(pageParam, rpAccount);
+        List<Object> recordList = pageBean.getRecordList();
+        for (Object obj : recordList) {
+            RpAccount account = (RpAccount) obj;
+            RpUserInfo userInfo = rpUserInfoService.getDataByMerchentNo(account.getUserNo());
+            account.setUserName(userInfo.getUserName());
+        }
+        model.addAttribute("pageBean", pageBean);
         model.addAttribute("pageParam", pageParam);
-        model.addAttribute("rpAccount",rpAccount);
-		return "account/list";
-	}
+        model.addAttribute("rpAccount", rpAccount);
+        return "account/list";
+    }
 
-	/**
-	 * 函数功能说明 ： 查询账户历史信息
-	 * 
-	 * @参数： @return
-	 * @return String
-	 * @throws
-	 */
-	@RequestMapping(value = "/historyList", method ={RequestMethod.POST,RequestMethod.GET})
-	public String historyList(RpAccountHistory rpAccountHistory,PageParam pageParam, Model model) {
-		PageBean pageBean = rpAccountHistoryService.listPage(pageParam, rpAccountHistory);
-		List<Object> recordList = pageBean.getRecordList();
-		for(Object obj : recordList){
-			RpAccountHistory history = (RpAccountHistory)obj;
-			RpUserInfo userInfo = rpUserInfoService.getDataByMerchentNo(history.getUserNo());
-			history.setUserName(userInfo.getUserName());
-		}
-		model.addAttribute("pageBean", pageBean);
+    /**
+     * 函数功能说明 ： 查询账户历史信息
+     *
+     * @return String
+     * @throws
+     * @参数： @return
+     */
+    @RequestMapping(value = "/historyList", method = {RequestMethod.POST, RequestMethod.GET})
+    public String historyList(RpAccountHistory rpAccountHistory, PageParam pageParam, Model model) {
+        PageBean pageBean = rpAccountHistoryService.listPage(pageParam, rpAccountHistory);
+        List<Object> recordList = pageBean.getRecordList();
+        for (Object obj : recordList) {
+            RpAccountHistory history = (RpAccountHistory) obj;
+            RpUserInfo userInfo = rpUserInfoService.getDataByMerchentNo(history.getUserNo());
+            history.setUserName(userInfo.getUserName());
+        }
+        model.addAttribute("pageBean", pageBean);
         model.addAttribute("pageParam", pageParam);
-        model.addAttribute("rpAccountHistory",rpAccountHistory);
-		return "account/historyList";
-	}
+        model.addAttribute("rpAccountHistory", rpAccountHistory);
+        return "account/historyList";
+    }
 }

@@ -25,6 +25,7 @@ import com.roncoo.pay.user.enums.FundInfoTypeEnum;
 /**
  * 用户支付配置实体类
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
 public class RpUserPayConfig extends BaseEntity implements Serializable {
@@ -43,18 +44,22 @@ public class RpUserPayConfig extends BaseEntity implements Serializable {
     private String userName;
 
     private Integer riskDay;
-    
+
     private String payKey;
-    
+
     private String fundIntoType;
 
     private String paySecret;
 
-    /** 安全等级 **/
+    /**
+     * 安全等级
+     **/
     private String securityRating = SecurityRatingEnum.MD5.name();
 
 
-    /**商户服务器IP **/
+    /**
+     * 商户服务器IP
+     **/
     private String merchantServerIp;
 
     public String getPaySecret() {
@@ -90,14 +95,14 @@ public class RpUserPayConfig extends BaseEntity implements Serializable {
     public void setIsAutoSett(String isAutoSett) {
         this.isAutoSett = isAutoSett == null ? null : isAutoSett.trim();
     }
-    
-    public String getPayKey() {
-		return payKey;
-	}
 
-	public void setPayKey(String payKey) {
-		this.payKey = payKey;
-	}
+    public String getPayKey() {
+        return payKey;
+    }
+
+    public void setPayKey(String payKey) {
+        this.payKey = payKey;
+    }
 
     public String getProductCode() {
         return productCode;
@@ -140,11 +145,11 @@ public class RpUserPayConfig extends BaseEntity implements Serializable {
     }
 
     public String getAuditStatusDesc() {
-    	return PublicEnum.getEnum(this.getAuditStatus()).getDesc();
+        return PublicEnum.getEnum(this.getAuditStatus()).getDesc();
     }
-    
+
     public String getFundIntoTypeDesc() {
-    	return FundInfoTypeEnum.getEnum(this.getFundIntoType()).getDesc();
+        return FundInfoTypeEnum.getEnum(this.getFundIntoType()).getDesc();
     }
 
     public String getSecurityRating() {

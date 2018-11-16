@@ -23,28 +23,41 @@ import java.util.Map;
 /**
  * <b>功能说明:龙果支付网关页面展示实体
  * </b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
 public class RpPayGateWayPageShowVo {
 
-    /** 订单金额 **/
+    /**
+     * 订单金额
+     **/
     private BigDecimal orderAmount;
 
-    /** 产品名称 **/
+    /**
+     * 产品名称
+     **/
     private String productName;
 
-    /** 商户名称 **/
+    /**
+     * 商户名称
+     **/
     private String merchantName;
 
-    /** 商户订单号 **/
+    /**
+     * 商户订单号
+     **/
     private String merchantOrderNo;
 
-    /** 商户支付key **/
+    /**
+     * 商户支付key
+     **/
     private String payKey;
 
-    /** 支付方式列表 **/
-    private Map<String , PayWayEnum> payWayEnumMap;
+    /**
+     * 支付方式列表
+     **/
+    private Map<String, PayWayEnum> payWayEnumMap;
 
     public BigDecimal getOrderAmount() {
         return orderAmount;

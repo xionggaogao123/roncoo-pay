@@ -22,16 +22,21 @@ import java.util.Map;
 
 /**
  * <b>功能说明:微信交易类型枚举类</b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
 public enum WeiXinTradeTypeEnum {
 
-    /** JSAPI--公众号支付、NATIVE--原生扫码支付、APP--app支付，统一下单接口trade_type的传参可参考这里
-     MICROPAY--刷卡支付，刷卡支付有单独的支付接口，不调用统一下单接口 **/
-    JSAPI("公众号支付"),NATIVE("原生扫码支付"),APP("app支付"),MICROPAY("刷卡支付");
+    /**
+     * JSAPI--公众号支付、NATIVE--原生扫码支付、APP--app支付，统一下单接口trade_type的传参可参考这里
+     * MICROPAY--刷卡支付，刷卡支付有单独的支付接口，不调用统一下单接口
+     **/
+    JSAPI("公众号支付"), NATIVE("原生扫码支付"), APP("app支付"), MICROPAY("刷卡支付");
 
-    /** 描述 */
+    /**
+     * 描述
+     */
     private String desc;
 
     private WeiXinTradeTypeEnum(String desc) {
@@ -58,7 +63,7 @@ public enum WeiXinTradeTypeEnum {
         return enumMap;
     }
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @SuppressWarnings({"rawtypes", "unchecked"})
     public static List toList() {
         WeiXinTradeTypeEnum[] ary = WeiXinTradeTypeEnum.values();
         List list = new ArrayList();

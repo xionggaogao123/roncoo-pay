@@ -22,6 +22,7 @@ import com.roncoo.pay.common.core.entity.BaseEntity;
 /**
  * 支付方式实体类
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
 public class RpPayWay extends BaseEntity implements Serializable {

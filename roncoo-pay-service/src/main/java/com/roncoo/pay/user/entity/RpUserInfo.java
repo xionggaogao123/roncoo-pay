@@ -23,6 +23,7 @@ import com.roncoo.pay.common.core.enums.PublicStatusEnum;
 /**
  * 用户信息
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
 public class RpUserInfo extends BaseEntity implements Serializable {
@@ -34,38 +35,40 @@ public class RpUserInfo extends BaseEntity implements Serializable {
     private String accountNo;
 
     private static final long serialVersionUID = 1L;
-    
+
     private String mobile;
-    
+
     private String password;
-    /** 支付密码 */
-	private String payPwd;
+    /**
+     * 支付密码
+     */
+    private String payPwd;
 
     public String getPayPwd() {
-		return payPwd;
-	}
+        return payPwd;
+    }
 
-	public void setPayPwd(String payPwd) {
-		this.payPwd = payPwd;
-	}
+    public void setPayPwd(String payPwd) {
+        this.payPwd = payPwd;
+    }
 
-	public String getMobile() {
-		return mobile;
-	}
+    public String getMobile() {
+        return mobile;
+    }
 
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public String getUserNo() {
+    public String getUserNo() {
         return userNo;
     }
 
@@ -88,7 +91,7 @@ public class RpUserInfo extends BaseEntity implements Serializable {
     public void setAccountNo(String accountNo) {
         this.accountNo = accountNo == null ? null : accountNo.trim();
     }
-    
+
     public String getStatusDesc() {
         return PublicStatusEnum.getEnum(this.getStatus()).getDesc();
     }

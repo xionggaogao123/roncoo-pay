@@ -36,10 +36,11 @@ import java.util.Date;
 /**
  * <b>功能说明:
  * </b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
-public class ConsumerSessionAwareMessageListener  implements MessageListener {
+public class ConsumerSessionAwareMessageListener implements MessageListener {
 
     private static final Log log = LogFactory.getLog(ConsumerSessionAwareMessageListener.class);
 
@@ -69,9 +70,9 @@ public class ConsumerSessionAwareMessageListener  implements MessageListener {
             notifyRecord.setCreateTime(new Date());
             notifyRecord.setLastNotifyTime(new Date());
 
-            if ( !StringUtil.isEmpty(notifyRecord.getId())){
+            if (!StringUtil.isEmpty(notifyRecord.getId())) {
                 RpNotifyRecord notifyRecordById = rpNotifyService.getNotifyRecordById(notifyRecord.getId());
-                if (notifyRecordById != null){
+                if (notifyRecordById != null) {
                     return;
                 }
             }
@@ -87,7 +88,7 @@ public class ConsumerSessionAwareMessageListener  implements MessageListener {
 
                 // 添加到通知队列
                 notifyQueue.addElementToList(notifyRecord);
-            }  catch (BizException e) {
+            } catch (BizException e) {
                 log.error("BizException :", e);
             } catch (Exception e) {
                 log.error(e);

@@ -27,10 +27,11 @@ import java.util.Map;
 /**
  * 用户第三方支付信息dao实现类
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
 @Repository
-public class RpUserPayInfoDaoImpl  extends BaseDaoImpl<RpUserPayInfo> implements RpUserPayInfoDao{
+public class RpUserPayInfoDaoImpl extends BaseDaoImpl<RpUserPayInfo> implements RpUserPayInfoDao {
     /**
      * 通过商户编号获取商户第三方支付信息
      *
@@ -40,9 +41,9 @@ public class RpUserPayInfoDaoImpl  extends BaseDaoImpl<RpUserPayInfo> implements
      */
     @Override
     public RpUserPayInfo getByUserNo(String userNo, String payWayCode) {
-        Map<String , Object> paramMap = new HashMap<String , Object>();
-        paramMap.put("userNo",userNo);
-        paramMap.put("payWayCode",payWayCode);
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("userNo", userNo);
+        paramMap.put("payWayCode", payWayCode);
         return super.getBy(paramMap);
     }
 }

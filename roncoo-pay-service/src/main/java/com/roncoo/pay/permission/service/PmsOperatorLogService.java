@@ -21,39 +21,38 @@ import com.roncoo.pay.permission.entity.PmsOperatorLog;
 
 /**
  * 操作员日志service接口
- *
+ * <p>
  * 龙果学院：www.roncoo.com
- * 
+ *
  * @author：shenjialong
  */
 public interface PmsOperatorLogService {
 
-	/**
-	 * 创建pmsOperatorLog
-	 */
-	void saveData(PmsOperatorLog pmsOperatorLog);
+    /**
+     * 创建pmsOperatorLog
+     */
+    void saveData(PmsOperatorLog pmsOperatorLog);
 
-	/**
-	 * 修改pmsOperatorLog
-	 */
-	void updateData(PmsOperatorLog pmsOperatorLog);
+    /**
+     * 修改pmsOperatorLog
+     */
+    void updateData(PmsOperatorLog pmsOperatorLog);
 
-	/**
-	 * 根据id获取数据pmsOperatorLog
-	 * 
-	 * @param id
-	 * @return
-	 */
-	PmsOperatorLog getDataById(Long id);
+    /**
+     * 根据id获取数据pmsOperatorLog
+     *
+     * @param id
+     * @return
+     */
+    PmsOperatorLog getDataById(Long id);
 
-	/**
-	 * 分页查询pmsOperatorLog
-	 * 
-	 * @param pageParam
-	 * @param ActivityVo
-	 *            PmsOperatorLog
-	 * @return
-	 */
-	PageBean listPage(PageParam pageParam, PmsOperatorLog pmsOperatorLog);
+    /**
+     * 分页查询pmsOperatorLog
+     *
+     * @param pageParam
+     * @param ActivityVo PmsOperatorLog
+     * @return
+     */
+    PageBean listPage(PageParam pageParam, PmsOperatorLog pmsOperatorLog);
 
 }

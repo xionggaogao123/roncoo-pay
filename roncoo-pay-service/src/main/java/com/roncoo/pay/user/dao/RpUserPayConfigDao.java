@@ -28,10 +28,11 @@ import com.roncoo.pay.user.entity.RpUserPayConfig;
  * @创建时间：2016-5-18 上午11:14:10
  * @版本：V1.0
  */
-public interface RpUserPayConfigDao  extends BaseDao<RpUserPayConfig> {
+public interface RpUserPayConfigDao extends BaseDao<RpUserPayConfig> {
 
     /**
      * 根据用户编号获取用户支付信息
+     *
      * @param userNo
      * @return
      */

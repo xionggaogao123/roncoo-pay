@@ -20,9 +20,9 @@ import com.roncoo.pay.reconciliation.entity.RpAccountCheckBatch;
 
 /**
  * 对账批次dao
- *
+ * <p>
  * 龙果学院：www.roncoo.com
- * 
+ *
  * @author：shenjialong
  */
 public interface RpAccountCheckBatchDao extends BaseDao<RpAccountCheckBatch> {

@@ -29,52 +29,51 @@ import com.roncoo.pay.permission.service.PmsOperatorLogService;
 
 /**
  * 操作员service接口实现
- *
+ * <p>
  * 龙果学院：www.roncoo.com
- * 
+ *
  * @author：shenjialong
  */
 @Service("pmsOperatorLogService")
 public class PmsOperatorLogServiceImpl implements PmsOperatorLogService {
-	@Autowired
-	private PmsOperatorLogDao pmsOperatorLogDao;
+    @Autowired
+    private PmsOperatorLogDao pmsOperatorLogDao;
 
-	/**
-	 * 创建pmsOperator
-	 */
-	public void saveData(PmsOperatorLog pmsOperatorLog) {
-		pmsOperatorLogDao.insert(pmsOperatorLog);
-	}
+    /**
+     * 创建pmsOperator
+     */
+    public void saveData(PmsOperatorLog pmsOperatorLog) {
+        pmsOperatorLogDao.insert(pmsOperatorLog);
+    }
 
-	/**
-	 * 修改pmsOperator
-	 */
-	public void updateData(PmsOperatorLog pmsOperatorLog) {
-		pmsOperatorLogDao.update(pmsOperatorLog);
-	}
+    /**
+     * 修改pmsOperator
+     */
+    public void updateData(PmsOperatorLog pmsOperatorLog) {
+        pmsOperatorLogDao.update(pmsOperatorLog);
+    }
 
-	/**
-	 * 根据id获取数据pmsOperator
-	 * 
-	 * @param id
-	 * @return
-	 */
-	public PmsOperatorLog getDataById(Long id) {
-		return pmsOperatorLogDao.getById(id);
+    /**
+     * 根据id获取数据pmsOperator
+     *
+     * @param id
+     * @return
+     */
+    public PmsOperatorLog getDataById(Long id) {
+        return pmsOperatorLogDao.getById(id);
 
-	}
+    }
 
-	/**
-	 * 分页查询pmsOperator
-	 * 
-	 * @param pageParam
-	 * @param ActivityVo
-	 *            PmsOperator
-	 * @return
-	 */
-	public PageBean listPage(PageParam pageParam, PmsOperatorLog pmsOperatorLog) {
-		Map<String, Object> paramMap = new HashMap<String, Object>();
-		return pmsOperatorLogDao.listPage(pageParam, paramMap);
-	}
+    /**
+     * 分页查询pmsOperator
+     *
+     * @param pageParam
+     * @param ActivityVo PmsOperator
+     * @return
+     */
+    public PageBean listPage(PageParam pageParam, PmsOperatorLog pmsOperatorLog) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        return pmsOperatorLogDao.listPage(pageParam, paramMap);
+    }
 
 }

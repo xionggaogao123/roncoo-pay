@@ -28,14 +28,15 @@ import com.roncoo.pay.trade.utils.AlipayConfigUtil;
  */
 
 public class AlipayCore {
-    
+
     /**
      * 调试用，创建TXT日志文件夹路径
      */
     private static final String LOG_PATH = AlipayConfigUtil.readConfig("log_path");
 
-    /** 
+    /**
      * 除去数组中的空值和签名参数
+     *
      * @param sArray 签名参数组
      * @return 去掉空值与签名参数后的新签名参数组
      */
@@ -50,7 +51,7 @@ public class AlipayCore {
         for (String key : sArray.keySet()) {
             String value = sArray.get(key);
             if (value == null || value.equals("") || key.equalsIgnoreCase("sign")
-                || key.equalsIgnoreCase("sign_type")) {
+                    || key.equalsIgnoreCase("sign_type")) {
                 continue;
             }
             result.put(key, value);
@@ -59,8 +60,9 @@ public class AlipayCore {
         return result;
     }
 
-    /** 
+    /**
      * 把数组所有元素排序，并按照“参数=参数值”的模式用“&”字符拼接成字符串
+     *
      * @param params 需要排序并参与字符拼接的参数组
      * @return 拼接后字符串
      */
@@ -85,14 +87,15 @@ public class AlipayCore {
         return prestr;
     }
 
-    /** 
+    /**
      * 写日志，方便测试（看网站需求，也可以改成把记录存入数据库）
+     *
      * @param sWord 要写入日志里的文本内容
      */
     public static void logResult(String sWord) {
         FileWriter writer = null;
         try {
-            writer = new FileWriter(LOG_PATH + "alipay_log_" + System.currentTimeMillis()+".txt");
+            writer = new FileWriter(LOG_PATH + "alipay_log_" + System.currentTimeMillis() + ".txt");
             writer.write(sWord);
         } catch (Exception e) {
             e.printStackTrace();
@@ -107,22 +110,21 @@ public class AlipayCore {
         }
     }
 
-    /** 
+    /**
      * 生成文件摘要
-     * @param strFilePath 文件路径
+     *
+     * @param strFilePath      文件路径
      * @param file_digest_type 摘要算法
      * @return 文件摘要结果
      */
     public static String getAbstract(String strFilePath, String file_digest_type) throws IOException {
         PartSource file = new FilePartSource(new File(strFilePath));
-    	if(file_digest_type.equals("MD5")){
-    		return DigestUtils.md5Hex(file.createInputStream());
-    	}
-    	else if(file_digest_type.equals("SHA")) {
-    		return DigestUtils.sha256Hex(file.createInputStream());
-    	}
-    	else {
-    		return "";
-    	}
+        if (file_digest_type.equals("MD5")) {
+            return DigestUtils.md5Hex(file.createInputStream());
+        } else if (file_digest_type.equals("SHA")) {
+            return DigestUtils.sha256Hex(file.createInputStream());
+        } else {
+            return "";
+        }
     }
 }

@@ -28,146 +28,237 @@ import com.roncoo.pay.trade.enums.TrxTypeEnum;
 
 /**
  * <b>功能说明:商户支付记录实体类</b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
 public class RpTradePaymentRecord extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /** 商品名称 **/
+    /**
+     * 商品名称
+     **/
     private String productName;
 
-    /** 商户订单号 **/
+    /**
+     * 商户订单号
+     **/
     private String merchantOrderNo;
 
-    /** 支付流水号 **/
+    /**
+     * 支付流水号
+     **/
     private String trxNo;
 
-    /** 银行订单号 **/
+    /**
+     * 银行订单号
+     **/
     private String bankOrderNo;
 
-    /** 银行流水号 **/
+    /**
+     * 银行流水号
+     **/
     private String bankTrxNo;
 
-    /** 商户名称 **/
+    /**
+     * 商户名称
+     **/
     private String merchantName;
 
-    /** 商户编号 **/
+    /**
+     * 商户编号
+     **/
     private String merchantNo;
 
-    /** 付款方编号 **/
+    /**
+     * 付款方编号
+     **/
     private String payerUserNo;
 
-    /** 付款方名称 **/
+    /**
+     * 付款方名称
+     **/
     private String payerName;
 
-    /** 付款方支付金额 **/
+    /**
+     * 付款方支付金额
+     **/
     private BigDecimal payerPayAmount;
 
-    /** 付款方手续费 **/
+    /**
+     * 付款方手续费
+     **/
     private BigDecimal payerFee;
 
-    /** 付款方账户类型 **/
+    /**
+     * 付款方账户类型
+     **/
     private String payerAccountType;
 
-    /** 收款方编号 **/
+    /**
+     * 收款方编号
+     **/
     private String receiverUserNo;
 
-    /** 收款方名称 **/
+    /**
+     * 收款方名称
+     **/
     private String receiverName;
 
-    /** 收款方收款金额 **/
+    /**
+     * 收款方收款金额
+     **/
     private BigDecimal receiverPayAmount;
 
-    /** 收款方手续费 **/
+    /**
+     * 收款方手续费
+     **/
     private BigDecimal receiverFee;
 
-    /** 收款方账户类型 **/
+    /**
+     * 收款方账户类型
+     **/
     private String receiverAccountType;
 
-    /** 下单IP **/
+    /**
+     * 下单IP
+     **/
     private String orderIp;
 
-    /** 页面链接 **/
+    /**
+     * 页面链接
+     **/
     private String orderRefererUrl;
 
-    /** 订单金额 **/
+    /**
+     * 订单金额
+     **/
     private BigDecimal orderAmount;
 
-    /** 平台收入 初始创建默认为-**/
+    /**
+     * 平台收入 初始创建默认为-
+     **/
     private BigDecimal platIncome = BigDecimal.ZERO;
 
-    /** 费率 **/
+    /**
+     * 费率
+     **/
     private BigDecimal feeRate = BigDecimal.ZERO;
 
-    /** 平台成本 **/
+    /**
+     * 平台成本
+     **/
     private BigDecimal platCost = BigDecimal.ZERO;
 
-    /** 平台利润 **/
+    /**
+     * 平台利润
+     **/
     private BigDecimal platProfit = BigDecimal.ZERO;
 
-    /** 支付结果页面通知地址 **/
+    /**
+     * 支付结果页面通知地址
+     **/
     private String returnUrl;
 
-    /** 支付结果后台通知地址 **/
+    /**
+     * 支付结果后台通知地址
+     **/
     private String notifyUrl;
 
-    /** 支付通道编码 **/
+    /**
+     * 支付通道编码
+     **/
     private String payWayCode;
 
-    /** 支付通道名称 **/
+    /**
+     * 支付通道名称
+     **/
     private String payWayName;
 
-    /** 成功支付时间 **/
+    /**
+     * 成功支付时间
+     **/
     private Date paySuccessTime;
 
-    /** 完成时间 **/
+    /**
+     * 完成时间
+     **/
     private Date completeTime;
 
-    /** 是否退款 **/
+    /**
+     * 是否退款
+     **/
     private String isRefund;
 
-    /** 退款次数 **/
+    /**
+     * 退款次数
+     **/
     private Integer refundTimes;
 
-    /** 成功退款金额 **/
+    /**
+     * 成功退款金额
+     **/
     private BigDecimal successRefundAmount;
 
-    /** 业务类型 **/
+    /**
+     * 业务类型
+     **/
     private String trxType;
 
-    /** 订单来源 **/
+    /**
+     * 订单来源
+     **/
     private String orderFrom;
 
-    /** 支付方式类型编码 **/
+    /**
+     * 支付方式类型编码
+     **/
     private String payTypeCode;
 
-    /** 支付方式类型名称 **/
+    /**
+     * 支付方式类型名称
+     **/
     private String payTypeName;
 
-    /** 资金流入类型 **/
+    /**
+     * 资金流入类型
+     **/
     private String fundIntoType;
 
-    /** 备注 **/
+    /**
+     * 备注
+     **/
     private String remark;
 
-    /** 银行返回信息 **/
+    /**
+     * 银行返回信息
+     **/
     private String bankReturnMsg;
 
-    /** 扩展字段1 **/
+    /**
+     * 扩展字段1
+     **/
     private String field1;
 
-    /** 扩展字段2 **/
+    /**
+     * 扩展字段2
+     **/
     private String field2;
 
-    /** 扩展字段3 **/
+    /**
+     * 扩展字段3
+     **/
     private String field3;
 
-    /** 扩展字段4 **/
+    /**
+     * 扩展字段4
+     **/
     private String field4;
 
-    /** 扩展字段5 **/
+    /**
+     * 扩展字段5
+     **/
     private String field5;
 
     public String getProductName() {
@@ -531,21 +622,21 @@ public class RpTradePaymentRecord extends BaseEntity implements Serializable {
     public void setBankReturnMsg(String bankReturnMsg) {
         this.bankReturnMsg = bankReturnMsg;
     }
-    
+
     public String getTrxTypeDesc() {
-    	return TrxTypeEnum.getEnum(this.getTrxType()).getDesc();
+        return TrxTypeEnum.getEnum(this.getTrxType()).getDesc();
     }
-    
+
     public String getPayWayNameDesc() {
-    	return PayWayEnum.getEnum(this.getPayWayCode()).getDesc()+"-"+PayTypeEnum.getEnum(this.getPayTypeCode()).getDesc();
+        return PayWayEnum.getEnum(this.getPayWayCode()).getDesc() + "-" + PayTypeEnum.getEnum(this.getPayTypeCode()).getDesc();
     }
-    
+
     public String getStatusDesc() {
-    	return TradeStatusEnum.getEnum(this.getStatus()).getDesc();
+        return TradeStatusEnum.getEnum(this.getStatus()).getDesc();
     }
-    
+
     public String getCreateTimeDesc() {
-    	return DateUtils.formatDate(this.getCreateTime(), "yyyy-MM-dd HH:mm");
+        return DateUtils.formatDate(this.getCreateTime(), "yyyy-MM-dd HH:mm");
     }
 
     @Override

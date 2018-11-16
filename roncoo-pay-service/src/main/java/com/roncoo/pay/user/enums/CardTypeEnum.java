@@ -23,13 +23,16 @@ import java.util.Map;
 /**
  * 证件类型
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
 public enum CardTypeEnum {
 
-    IDENTITY("身份证"); 
+    IDENTITY("身份证");
 
-    /** 描述 */
+    /**
+     * 描述
+     */
     private String desc;
 
     private CardTypeEnum(String desc) {
@@ -57,7 +60,7 @@ public enum CardTypeEnum {
         return enumMap;
     }
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @SuppressWarnings({"rawtypes", "unchecked"})
     public static List toList() {
         CardTypeEnum[] ary = CardTypeEnum.values();
         List list = new ArrayList();
@@ -69,16 +72,16 @@ public enum CardTypeEnum {
         return list;
     }
 
-    
+
     public static CardTypeEnum getEnum(String enumName) {
-		CardTypeEnum resultEnum = null;
-		CardTypeEnum[] enumAry = CardTypeEnum.values();
-		for (int i = 0; i < enumAry.length; i++) {
-			if (enumAry[i].name().equals(enumName)) {
-				resultEnum = enumAry[i];
-				break;
-			}
-		}
-		return resultEnum;
-	}
+        CardTypeEnum resultEnum = null;
+        CardTypeEnum[] enumAry = CardTypeEnum.values();
+        for (int i = 0; i < enumAry.length; i++) {
+            if (enumAry[i].name().equals(enumName)) {
+                resultEnum = enumAry[i];
+                break;
+            }
+        }
+        return resultEnum;
+    }
 }

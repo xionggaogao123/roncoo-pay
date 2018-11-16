@@ -22,35 +22,36 @@ import com.roncoo.pay.common.core.page.PageParam;
 /**
  * 账户历史service接口
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
-public interface RpAccountHistoryService{
-	
-	/**
-	 * 保存
-	 */
-	void saveData(RpAccountHistory rpAccountHistory);
+public interface RpAccountHistoryService {
 
-	/**
-	 * 更新
-	 */
-	void updateData(RpAccountHistory rpAccountHistory);
+    /**
+     * 保存
+     */
+    void saveData(RpAccountHistory rpAccountHistory);
 
-	/**
-	 * 根据id获取数据
-	 * 
-	 * @param id
-	 * @return
-	 */
-	RpAccountHistory getDataById(String id);
-	
+    /**
+     * 更新
+     */
+    void updateData(RpAccountHistory rpAccountHistory);
 
-	/**
-	 * 获取分页数据
-	 * 
-	 * @param pageParam
-	 * @return
-	 */
-	PageBean listPage(PageParam pageParam, RpAccountHistory rpAccountHistory);
-	
+    /**
+     * 根据id获取数据
+     *
+     * @param id
+     * @return
+     */
+    RpAccountHistory getDataById(String id);
+
+
+    /**
+     * 获取分页数据
+     *
+     * @param pageParam
+     * @return
+     */
+    PageBean listPage(PageParam pageParam, RpAccountHistory rpAccountHistory);
+
 }

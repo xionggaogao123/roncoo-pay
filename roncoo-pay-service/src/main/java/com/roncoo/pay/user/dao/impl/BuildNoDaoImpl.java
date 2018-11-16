@@ -22,15 +22,16 @@ import com.roncoo.pay.user.dao.BuildNoDao;
 import com.roncoo.pay.user.entity.SeqBuild;
 
 /**
- *  生成编号dao实现类
+ * 生成编号dao实现类
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
 @Repository
-public class BuildNoDaoImpl   extends BaseDaoImpl<SeqBuild> implements BuildNoDao {
+public class BuildNoDaoImpl extends BaseDaoImpl<SeqBuild> implements BuildNoDao {
 
     @Override
     public String getSeqNextValue(SeqBuild seqBuild) {
-        return super.getSqlSession().selectOne(getStatement("getSeqNextValue"),seqBuild);
+        return super.getSqlSession().selectOne(getStatement("getSeqNextValue"), seqBuild);
     }
 }

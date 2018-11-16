@@ -29,45 +29,45 @@ import com.roncoo.pay.reconciliation.service.RpAccountCheckBatchService;
 
 /**
  * 对账批次接口实现 .
- * 
+ * <p>
  * 龙果学院：www.roncoo.com
- * 
+ *
  * @author：shenjialong
  */
 @Service("rpAccountCheckBatchService")
 public class RpAccountCheckBatchServiceImpl implements RpAccountCheckBatchService {
 
-	@Autowired
-	private RpAccountCheckBatchDao rpAccountCheckBatchDao;
+    @Autowired
+    private RpAccountCheckBatchDao rpAccountCheckBatchDao;
 
-	@Override
-	public void saveData(RpAccountCheckBatch rpAccountCheckBatch) {
-		rpAccountCheckBatchDao.insert(rpAccountCheckBatch);
-	}
+    @Override
+    public void saveData(RpAccountCheckBatch rpAccountCheckBatch) {
+        rpAccountCheckBatchDao.insert(rpAccountCheckBatch);
+    }
 
-	@Override
-	public void updateData(RpAccountCheckBatch rpAccountCheckBatch) {
-		rpAccountCheckBatchDao.update(rpAccountCheckBatch);
-	}
+    @Override
+    public void updateData(RpAccountCheckBatch rpAccountCheckBatch) {
+        rpAccountCheckBatchDao.update(rpAccountCheckBatch);
+    }
 
-	@Override
-	public RpAccountCheckBatch getDataById(String id) {
-		return rpAccountCheckBatchDao.getById(id);
-	}
+    @Override
+    public RpAccountCheckBatch getDataById(String id) {
+        return rpAccountCheckBatchDao.getById(id);
+    }
 
-	@Override
-	public PageBean listPage(PageParam pageParam, Map<String, Object> paramMap) {
+    @Override
+    public PageBean listPage(PageParam pageParam, Map<String, Object> paramMap) {
 
-		return rpAccountCheckBatchDao.listPage(pageParam, paramMap);
-	}
+        return rpAccountCheckBatchDao.listPage(pageParam, paramMap);
+    }
 
-	/**
-	 * 根据条件查询实体
-	 * 
-	 * @param paramMap
-	 */
-	public List<RpAccountCheckBatch> listBy(Map<String, Object> paramMap) {
-		return rpAccountCheckBatchDao.listBy(paramMap);
-	}
+    /**
+     * 根据条件查询实体
+     *
+     * @param paramMap
+     */
+    public List<RpAccountCheckBatch> listBy(Map<String, Object> paramMap) {
+        return rpAccountCheckBatchDao.listBy(paramMap);
+    }
 
 }

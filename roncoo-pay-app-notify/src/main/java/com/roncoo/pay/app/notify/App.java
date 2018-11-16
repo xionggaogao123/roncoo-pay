@@ -37,11 +37,11 @@ import java.util.concurrent.DelayQueue;
 /**
  * <b>功能说明:消息APP启动类
  * </b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
-public class App 
-{
+public class App {
     private static final Log LOG = LogFactory.getLog(App.class);
 
     public static DelayQueue<NotifyTask> tasks = new DelayQueue<NotifyTask>();
@@ -58,7 +58,7 @@ public class App
 
     public static void main(String[] args) {
         try {
-            context = new ClassPathXmlApplicationContext(new String[] { "spring/spring-context.xml" });
+            context = new ClassPathXmlApplicationContext(new String[]{"spring/spring-context.xml"});
             context.start();
             threadPool = (ThreadPoolTaskExecutor) context.getBean("threadPool");
             rpNotifyService = (RpNotifyService) context.getBean("rpNotifyService");
@@ -105,7 +105,7 @@ public class App
                         }
                     }
                 } catch (Exception e) {
-                    LOG.error("系统异常",e);
+                    LOG.error("系统异常", e);
                     e.printStackTrace();
                 }
             }
@@ -124,15 +124,15 @@ public class App
         PageParam pageParam = new PageParam(pageNum, numPerPage);
 
         // 查询状态和通知次数符合以下条件的数据进行通知
-        String[] status = new String[] { "101", "102", "200", "201" };
-        Integer[] notifyTime = new Integer[] { 0, 1, 2, 3, 4 };
+        String[] status = new String[]{"101", "102", "200", "201"};
+        Integer[] notifyTime = new Integer[]{0, 1, 2, 3, 4};
         // 组装查询条件
         Map<String, Object> paramMap = new HashMap<String, Object>();
         paramMap.put("statusList", status);
         paramMap.put("notifyTimeList", notifyTime);
 
         PageBean<RpNotifyRecord> pager = rpNotifyService.queryNotifyRecordListPage(pageParam, paramMap);
-        int totalSize = (pager.getNumPerPage()-1)/numPerPage+1;//总页数
+        int totalSize = (pager.getNumPerPage() - 1) / numPerPage + 1;//总页数
         while (pageNum <= totalSize) {
             List<RpNotifyRecord> list = pager.getRecordList();
             for (int i = 0; i < list.size(); i++) {

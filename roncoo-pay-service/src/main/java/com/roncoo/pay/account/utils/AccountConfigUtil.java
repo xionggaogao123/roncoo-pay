@@ -23,6 +23,7 @@ import org.apache.commons.logging.LogFactory;
 
 /**
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
 public class AccountConfigUtil {
@@ -52,9 +53,9 @@ public class AccountConfigUtil {
     /**
      * 函数功能说明 ：读取配置项 Administrator 2012-12-14 修改者名字 ： 修改日期 ： 修改内容 ：
      *
-     * @参数：
      * @return void
      * @throws
+     * @参数：
      */
     public static String readConfig(String key) {
         return (String) properties.get(key);

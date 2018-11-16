@@ -22,294 +22,340 @@ import com.roncoo.pay.common.core.entity.BaseEntity;
 
 /**
  * 对账差错表.
- *
+ * <p>
  * 龙果学院：www.roncoo.com
- * 
+ *
  * @author：shenjialong
  */
 public class RpAccountCheckMistake extends BaseEntity {
 
-	/** 对账批次号 **/
-	private String accountCheckBatchNo;
+    /**
+     * 对账批次号
+     **/
+    private String accountCheckBatchNo;
+
+    /**
+     * 账单日期
+     **/
+    private Date billDate;
+
+    /**
+     * 银行类型 WEIXIN ALIPAY
+     **/
+    private String bankType;
+
+    /**
+     * 下单时间
+     **/
+    private Date orderTime;
+
+    /**
+     * 商家名称
+     **/
+    private String merchantName;
+
+    /**
+     * 商家编号
+     **/
+    private String merchantNo;
+
+    /**
+     * 商家订单号
+     **/
+    private String orderNo;
+
+    /**
+     * 平台交易时间
+     **/
+    private Date tradeTime;
+
+    /**
+     * 平台流水号
+     **/
+    private String trxNo;
+
+    /**
+     * 平台交易金额
+     **/
+    private BigDecimal orderAmount;
+
+    /**
+     * 平台退款金额
+     **/
+    private BigDecimal refundAmount;
+
+    /**
+     * 平台交易状态
+     **/
+    private String tradeStatus;
+
+    /**
+     * 平台手续费
+     **/
+    private BigDecimal fee;
+
+    /**
+     * 银行交易时间
+     **/
+    private Date bankTradeTime;
+
+    /**
+     * 银行订单号
+     **/
+    private String bankOrderNo;
+
+    /**
+     * 银行流水号
+     **/
+    private String bankTrxNo;
+
+    /**
+     * 银行交易状态
+     **/
+    private String bankTradeStatus;
+
+    /**
+     * 银行交易金额
+     **/
+    private BigDecimal bankAmount;
+
+    /**
+     * 银行退款金额
+     **/
+    private BigDecimal bankRefundAmount;
+
+    /**
+     * 银行手续费
+     **/
+    private BigDecimal bankFee;
+
+    /**
+     * 差错类型
+     **/
+    private String errType;
 
-	/** 账单日期 **/
-	private Date billDate;
+    /**
+     * 处理状态, 已处理, 未处理
+     **/
+    private String handleStatus;
 
-	/** 银行类型 WEIXIN ALIPAY **/
-	private String bankType;
+    /**
+     * 处理结果
+     **/
+    private String handleValue;
 
-	/** 下单时间 **/
-	private Date orderTime;
+    private String handleRemark;
 
-	/** 商家名称 **/
-	private String merchantName;
+    private String operatorName;
 
-	/** 商家编号 **/
-	private String merchantNo;
+    private String operatorAccountNo;
 
-	/** 商家订单号 **/
-	private String orderNo;
+    public String getAccountCheckBatchNo() {
+        return accountCheckBatchNo;
+    }
 
-	/** 平台交易时间 **/
-	private Date tradeTime;
+    public void setAccountCheckBatchNo(String accountCheckBatchNo) {
+        this.accountCheckBatchNo = accountCheckBatchNo == null ? null : accountCheckBatchNo.trim();
+    }
 
-	/** 平台流水号 **/
-	private String trxNo;
+    public Date getBillDate() {
+        return billDate;
+    }
 
-	/** 平台交易金额 **/
-	private BigDecimal orderAmount;
+    public void setBillDate(Date billDate) {
+        this.billDate = billDate;
+    }
 
-	/** 平台退款金额 **/
-	private BigDecimal refundAmount;
+    public String getBankType() {
+        return bankType;
+    }
 
-	/** 平台交易状态 **/
-	private String tradeStatus;
+    public void setBankType(String bankType) {
+        this.bankType = bankType == null ? null : bankType.trim();
+    }
 
-	/** 平台手续费 **/
-	private BigDecimal fee;
+    public Date getOrderTime() {
+        return orderTime;
+    }
 
-	/** 银行交易时间 **/
-	private Date bankTradeTime;
+    public void setOrderTime(Date orderTime) {
+        this.orderTime = orderTime;
+    }
 
-	/** 银行订单号 **/
-	private String bankOrderNo;
+    public String getMerchantName() {
+        return merchantName;
+    }
 
-	/** 银行流水号 **/
-	private String bankTrxNo;
+    public void setMerchantName(String merchantName) {
+        this.merchantName = merchantName == null ? null : merchantName.trim();
+    }
 
-	/** 银行交易状态 **/
-	private String bankTradeStatus;
+    public String getMerchantNo() {
+        return merchantNo;
+    }
 
-	/** 银行交易金额 **/
-	private BigDecimal bankAmount;
+    public void setMerchantNo(String merchantNo) {
+        this.merchantNo = merchantNo == null ? null : merchantNo.trim();
+    }
 
-	/** 银行退款金额 **/
-	private BigDecimal bankRefundAmount;
+    public String getOrderNo() {
+        return orderNo;
+    }
 
-	/** 银行手续费 **/
-	private BigDecimal bankFee;
+    public void setOrderNo(String orderNo) {
+        this.orderNo = orderNo == null ? null : orderNo.trim();
+    }
 
-	/** 差错类型 **/
-	private String errType;
+    public Date getTradeTime() {
+        return tradeTime;
+    }
 
-	/** 处理状态, 已处理, 未处理 **/
-	private String handleStatus;
+    public void setTradeTime(Date tradeTime) {
+        this.tradeTime = tradeTime;
+    }
 
-	/** 处理结果 **/
-	private String handleValue;
+    public String getTrxNo() {
+        return trxNo;
+    }
 
-	private String handleRemark;
+    public void setTrxNo(String trxNo) {
+        this.trxNo = trxNo == null ? null : trxNo.trim();
+    }
 
-	private String operatorName;
+    public BigDecimal getOrderAmount() {
+        return orderAmount;
+    }
 
-	private String operatorAccountNo;
+    public void setOrderAmount(BigDecimal orderAmount) {
+        this.orderAmount = orderAmount;
+    }
 
-	public String getAccountCheckBatchNo() {
-		return accountCheckBatchNo;
-	}
+    public BigDecimal getRefundAmount() {
+        return refundAmount;
+    }
 
-	public void setAccountCheckBatchNo(String accountCheckBatchNo) {
-		this.accountCheckBatchNo = accountCheckBatchNo == null ? null : accountCheckBatchNo.trim();
-	}
+    public void setRefundAmount(BigDecimal refundAmount) {
+        this.refundAmount = refundAmount;
+    }
 
-	public Date getBillDate() {
-		return billDate;
-	}
+    public String getTradeStatus() {
+        return tradeStatus;
+    }
 
-	public void setBillDate(Date billDate) {
-		this.billDate = billDate;
-	}
+    public void setTradeStatus(String tradeStatus) {
+        this.tradeStatus = tradeStatus == null ? null : tradeStatus.trim();
+    }
 
-	public String getBankType() {
-		return bankType;
-	}
+    public BigDecimal getFee() {
+        return fee;
+    }
 
-	public void setBankType(String bankType) {
-		this.bankType = bankType == null ? null : bankType.trim();
-	}
+    public void setFee(BigDecimal fee) {
+        this.fee = fee;
+    }
 
-	public Date getOrderTime() {
-		return orderTime;
-	}
-
-	public void setOrderTime(Date orderTime) {
-		this.orderTime = orderTime;
-	}
-
-	public String getMerchantName() {
-		return merchantName;
-	}
-
-	public void setMerchantName(String merchantName) {
-		this.merchantName = merchantName == null ? null : merchantName.trim();
-	}
-
-	public String getMerchantNo() {
-		return merchantNo;
-	}
-
-	public void setMerchantNo(String merchantNo) {
-		this.merchantNo = merchantNo == null ? null : merchantNo.trim();
-	}
-
-	public String getOrderNo() {
-		return orderNo;
-	}
-
-	public void setOrderNo(String orderNo) {
-		this.orderNo = orderNo == null ? null : orderNo.trim();
-	}
-
-	public Date getTradeTime() {
-		return tradeTime;
-	}
-
-	public void setTradeTime(Date tradeTime) {
-		this.tradeTime = tradeTime;
-	}
-
-	public String getTrxNo() {
-		return trxNo;
-	}
-
-	public void setTrxNo(String trxNo) {
-		this.trxNo = trxNo == null ? null : trxNo.trim();
-	}
-
-	public BigDecimal getOrderAmount() {
-		return orderAmount;
-	}
-
-	public void setOrderAmount(BigDecimal orderAmount) {
-		this.orderAmount = orderAmount;
-	}
-
-	public BigDecimal getRefundAmount() {
-		return refundAmount;
-	}
-
-	public void setRefundAmount(BigDecimal refundAmount) {
-		this.refundAmount = refundAmount;
-	}
-
-	public String getTradeStatus() {
-		return tradeStatus;
-	}
-
-	public void setTradeStatus(String tradeStatus) {
-		this.tradeStatus = tradeStatus == null ? null : tradeStatus.trim();
-	}
-
-	public BigDecimal getFee() {
-		return fee;
-	}
-
-	public void setFee(BigDecimal fee) {
-		this.fee = fee;
-	}
-
-	public Date getBankTradeTime() {
-		return bankTradeTime;
-	}
-
-	public void setBankTradeTime(Date bankTradeTime) {
-		this.bankTradeTime = bankTradeTime;
-	}
-
-	public String getBankOrderNo() {
-		return bankOrderNo;
-	}
-
-	public void setBankOrderNo(String bankOrderNo) {
-		this.bankOrderNo = bankOrderNo == null ? null : bankOrderNo.trim();
-	}
-
-	public String getBankTrxNo() {
-		return bankTrxNo;
-	}
-
-	public void setBankTrxNo(String bankTrxNo) {
-		this.bankTrxNo = bankTrxNo == null ? null : bankTrxNo.trim();
-	}
-
-	public String getBankTradeStatus() {
-		return bankTradeStatus;
-	}
-
-	public void setBankTradeStatus(String bankTradeStatus) {
-		this.bankTradeStatus = bankTradeStatus == null ? null : bankTradeStatus.trim();
-	}
-
-	public BigDecimal getBankAmount() {
-		return bankAmount;
-	}
-
-	public void setBankAmount(BigDecimal bankAmount) {
-		this.bankAmount = bankAmount;
-	}
-
-	public BigDecimal getBankRefundAmount() {
-		return bankRefundAmount;
-	}
-
-	public void setBankRefundAmount(BigDecimal bankRefundAmount) {
-		this.bankRefundAmount = bankRefundAmount;
-	}
-
-	public BigDecimal getBankFee() {
-		return bankFee;
-	}
-
-	public void setBankFee(BigDecimal bankFee) {
-		this.bankFee = bankFee;
-	}
-
-	public String getErrType() {
-		return errType;
-	}
-
-	public void setErrType(String errType) {
-		this.errType = errType == null ? null : errType.trim();
-	}
-
-	public String getHandleStatus() {
-		return handleStatus;
-	}
-
-	public void setHandleStatus(String handleStatus) {
-		this.handleStatus = handleStatus == null ? null : handleStatus.trim();
-	}
-
-	public String getHandleValue() {
-		return handleValue;
-	}
-
-	public void setHandleValue(String handleValue) {
-		this.handleValue = handleValue == null ? null : handleValue.trim();
-	}
-
-	public String getHandleRemark() {
-		return handleRemark;
-	}
-
-	public void setHandleRemark(String handleRemark) {
-		this.handleRemark = handleRemark == null ? null : handleRemark.trim();
-	}
-
-	public String getOperatorName() {
-		return operatorName;
-	}
-
-	public void setOperatorName(String operatorName) {
-		this.operatorName = operatorName == null ? null : operatorName.trim();
-	}
-
-	public String getOperatorAccountNo() {
-		return operatorAccountNo;
-	}
-
-	public void setOperatorAccountNo(String operatorAccountNo) {
-		this.operatorAccountNo = operatorAccountNo == null ? null : operatorAccountNo.trim();
-	}
+    public Date getBankTradeTime() {
+        return bankTradeTime;
+    }
+
+    public void setBankTradeTime(Date bankTradeTime) {
+        this.bankTradeTime = bankTradeTime;
+    }
+
+    public String getBankOrderNo() {
+        return bankOrderNo;
+    }
+
+    public void setBankOrderNo(String bankOrderNo) {
+        this.bankOrderNo = bankOrderNo == null ? null : bankOrderNo.trim();
+    }
+
+    public String getBankTrxNo() {
+        return bankTrxNo;
+    }
+
+    public void setBankTrxNo(String bankTrxNo) {
+        this.bankTrxNo = bankTrxNo == null ? null : bankTrxNo.trim();
+    }
+
+    public String getBankTradeStatus() {
+        return bankTradeStatus;
+    }
+
+    public void setBankTradeStatus(String bankTradeStatus) {
+        this.bankTradeStatus = bankTradeStatus == null ? null : bankTradeStatus.trim();
+    }
+
+    public BigDecimal getBankAmount() {
+        return bankAmount;
+    }
+
+    public void setBankAmount(BigDecimal bankAmount) {
+        this.bankAmount = bankAmount;
+    }
+
+    public BigDecimal getBankRefundAmount() {
+        return bankRefundAmount;
+    }
+
+    public void setBankRefundAmount(BigDecimal bankRefundAmount) {
+        this.bankRefundAmount = bankRefundAmount;
+    }
+
+    public BigDecimal getBankFee() {
+        return bankFee;
+    }
+
+    public void setBankFee(BigDecimal bankFee) {
+        this.bankFee = bankFee;
+    }
+
+    public String getErrType() {
+        return errType;
+    }
+
+    public void setErrType(String errType) {
+        this.errType = errType == null ? null : errType.trim();
+    }
+
+    public String getHandleStatus() {
+        return handleStatus;
+    }
+
+    public void setHandleStatus(String handleStatus) {
+        this.handleStatus = handleStatus == null ? null : handleStatus.trim();
+    }
+
+    public String getHandleValue() {
+        return handleValue;
+    }
+
+    public void setHandleValue(String handleValue) {
+        this.handleValue = handleValue == null ? null : handleValue.trim();
+    }
+
+    public String getHandleRemark() {
+        return handleRemark;
+    }
+
+    public void setHandleRemark(String handleRemark) {
+        this.handleRemark = handleRemark == null ? null : handleRemark.trim();
+    }
+
+    public String getOperatorName() {
+        return operatorName;
+    }
+
+    public void setOperatorName(String operatorName) {
+        this.operatorName = operatorName == null ? null : operatorName.trim();
+    }
+
+    public String getOperatorAccountNo() {
+        return operatorAccountNo;
+    }
+
+    public void setOperatorAccountNo(String operatorAccountNo) {
+        this.operatorAccountNo = operatorAccountNo == null ? null : operatorAccountNo.trim();
+    }
 
 }

@@ -17,8 +17,8 @@ public class HttpClientUtil {
 
     /**
      * @param requestUrl 请求地址
-     * @param method 请求方式（GET、POST）
-     * @param outputStr 提交的数据
+     * @param method     请求方式（GET、POST）
+     * @param outputStr  提交的数据
      * @throws Exception
      */
     public static HttpResponse httpsRequest(String requestUrl, String method, String outputStr) throws IOException {
@@ -27,7 +27,7 @@ public class HttpClientUtil {
             SSLSocketFactory ssf = null;
             try {
                 // 创建SSLContext对象，并使用我们指定的信任管理器初始化
-                TrustManager[] tm = { new MyX509TrustManager() };
+                TrustManager[] tm = {new MyX509TrustManager()};
                 SSLContext sslContext = SSLContext.getInstance("SSL", "SunJSSE");
                 sslContext.init(null, tm, new java.security.SecureRandom());
                 ssf = sslContext.getSocketFactory();
@@ -72,8 +72,8 @@ public class HttpClientUtil {
 
     /**
      * @param requestUrl 请求地址
-     * @param method 请求方式（GET、POST）
-     * @param outputStr 提交的数据
+     * @param method     请求方式（GET、POST）
+     * @param outputStr  提交的数据
      * @throws Exception
      */
     public static HttpResponse httpsRequest2(String requestUrl, String method, String outputStr) throws IOException {
@@ -82,7 +82,7 @@ public class HttpClientUtil {
             SSLSocketFactory ssf = null;
             try {
                 // 创建SSLContext对象，并使用我们指定的信任管理器初始化
-                TrustManager[] tm = { new MyX509TrustManager() };
+                TrustManager[] tm = {new MyX509TrustManager()};
                 SSLContext sslContext = SSLContext.getInstance("SSL", "SunJSSE");
                 sslContext.init(null, tm, new java.security.SecureRandom());
                 ssf = sslContext.getSocketFactory();
@@ -94,7 +94,7 @@ public class HttpClientUtil {
                 throw new IOException("初始化SSLContext失败", e);
             }
 
-            URL url = new URL(null,requestUrl,new sun.net.www.protocol.https.Handler());
+            URL url = new URL(null, requestUrl, new sun.net.www.protocol.https.Handler());
             connection = (HttpsURLConnection) url.openConnection();
             connection.setSSLSocketFactory(ssf);
 

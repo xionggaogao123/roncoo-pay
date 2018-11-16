@@ -26,12 +26,12 @@ public class HttpResponse {
     /**
      * String类型的result
      */
-    private String   stringResult;
+    private String stringResult;
 
     /**
      * btye类型的result
      */
-    private byte[]   byteResult;
+    private byte[] byteResult;
 
     public Header[] getResponseHeaders() {
         return responseHeaders;

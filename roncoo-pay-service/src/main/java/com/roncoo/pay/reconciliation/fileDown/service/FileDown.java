@@ -21,23 +21,21 @@ import java.util.Date;
 
 /**
  * 对账文件下载
- * 
+ * <p>
  * 龙果学院：www.roncoo.com
- * 
+ *
  * @author：shenjialong
  */
 public interface FileDown {
 
-	/**
-	 * 对帐文件下载，获得文件输出
-	 * 
-	 * @param fileDate
-	 *            账单日
-	 * @param dir
-	 *            账单文件存储地址
-	 * @return
-	 * @throws Exception
-	 */
-	File fileDown(Date fileDate, String dir) throws IOException, Exception;
+    /**
+     * 对帐文件下载，获得文件输出
+     *
+     * @param fileDate 账单日
+     * @param dir      账单文件存储地址
+     * @return
+     * @throws Exception
+     */
+    File fileDown(Date fileDate, String dir) throws IOException, Exception;
 
 }

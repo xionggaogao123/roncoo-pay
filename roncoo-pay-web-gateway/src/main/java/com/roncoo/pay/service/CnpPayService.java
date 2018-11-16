@@ -18,7 +18,6 @@ public class CnpPayService {
     private static final Logger LOG = LoggerFactory.getLogger(CnpPayService.class);
 
     /**
-     *
      * @param rpUserPayConfig
      * @param httpServletRequest
      */

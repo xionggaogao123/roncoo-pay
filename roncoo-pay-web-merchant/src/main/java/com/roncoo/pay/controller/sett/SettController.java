@@ -43,67 +43,67 @@ import com.roncoo.pay.controller.common.JSONParam;
 import com.roncoo.pay.user.entity.RpUserInfo;
 
 /**
- * 结算信息 
+ * 结算信息
  */
 @Controller
 @RequestMapping("/merchant/sett")
 public class SettController extends BaseController {
-	private static final Log LOG = LogFactory.getLog(SettController.class);
-	@Autowired
-	private RpSettHandleService rpSettHandleService;
-	@Autowired
-	private RpSettQueryService rpSettQueryService;
-	@Autowired
-	private RpAccountService rpAccountService;
+    private static final Log LOG = LogFactory.getLog(SettController.class);
+    @Autowired
+    private RpSettHandleService rpSettHandleService;
+    @Autowired
+    private RpSettQueryService rpSettQueryService;
+    @Autowired
+    private RpAccountService rpAccountService;
 
-	/**
-	 * 函数功能说明 ： 查询结算记录
-	 * 
-	 * @参数： @return
-	 * @return String
-	 * @throws
-	 */
-	@RequestMapping(value = "/getSettList", method = { RequestMethod.POST, RequestMethod.GET })
-	public String getAccountInfo(HttpServletRequest request) {
+    /**
+     * 函数功能说明 ： 查询结算记录
+     *
+     * @return String
+     * @throws
+     * @参数： @return
+     */
+    @RequestMapping(value = "/getSettList", method = {RequestMethod.POST, RequestMethod.GET})
+    public String getAccountInfo(HttpServletRequest request) {
 
-		return "sett/list";
-	}
+        return "sett/list";
+    }
 
-	@RequestMapping(value = "/ajaxSettList", method = { RequestMethod.POST, RequestMethod.GET })
-	@ResponseBody
-	public String ajaxPaymentList(HttpServletRequest request, @RequestBody JSONParam[] params) throws IllegalAccessException, InvocationTargetException {
-		// convertToMap定义于父类，将参数数组中的所有元素加入一个HashMap
-		HashMap<String, String> paramMap = convertToMap(params);
-		String sEcho = paramMap.get("sEcho");
-		int start = Integer.parseInt(paramMap.get("iDisplayStart"));
-		int length = Integer.parseInt(paramMap.get("iDisplayLength"));
-		String beginDate = paramMap.get("beginDate");
-		String endDate = paramMap.get("endDate");
-		if (StringUtil.isEmpty(beginDate) && !StringUtil.isEmpty(endDate)) {
-			beginDate = endDate;
-		}
-		if (StringUtil.isEmpty(endDate) && !StringUtil.isEmpty(beginDate)) {
-			endDate = beginDate;
-		}
-		String merchantRequestNo = paramMap.get("merchantRequestNo");
-		String status = paramMap.get("status");
-		RpUserInfo userInfo = (RpUserInfo) request.getSession().getAttribute(ConstantClass.USER);
+    @RequestMapping(value = "/ajaxSettList", method = {RequestMethod.POST, RequestMethod.GET})
+    @ResponseBody
+    public String ajaxPaymentList(HttpServletRequest request, @RequestBody JSONParam[] params) throws IllegalAccessException, InvocationTargetException {
+        // convertToMap定义于父类，将参数数组中的所有元素加入一个HashMap
+        HashMap<String, String> paramMap = convertToMap(params);
+        String sEcho = paramMap.get("sEcho");
+        int start = Integer.parseInt(paramMap.get("iDisplayStart"));
+        int length = Integer.parseInt(paramMap.get("iDisplayLength"));
+        String beginDate = paramMap.get("beginDate");
+        String endDate = paramMap.get("endDate");
+        if (StringUtil.isEmpty(beginDate) && !StringUtil.isEmpty(endDate)) {
+            beginDate = endDate;
+        }
+        if (StringUtil.isEmpty(endDate) && !StringUtil.isEmpty(beginDate)) {
+            endDate = beginDate;
+        }
+        String merchantRequestNo = paramMap.get("merchantRequestNo");
+        String status = paramMap.get("status");
+        RpUserInfo userInfo = (RpUserInfo) request.getSession().getAttribute(ConstantClass.USER);
 
-		// 页面当前页需要显示的记录数据
-		PageParam pageParam = new PageParam(start / length + 1, length);
-		Map<String, Object> settMap = new HashMap<String, Object>();
-		settMap.put("userNo", userInfo.getUserNo());
-		settMap.put("settStatus", status);
-		settMap.put("merchantRequestNo", merchantRequestNo);
-		settMap.put("beginDate", beginDate);
-		settMap.put("endDate", endDate);
-		PageBean pageBean = rpSettQueryService.querySettRecordListPage(pageParam, settMap);
-		
-		Long count = Long.valueOf(pageBean.getTotalCount() + "");
+        // 页面当前页需要显示的记录数据
+        PageParam pageParam = new PageParam(start / length + 1, length);
+        Map<String, Object> settMap = new HashMap<String, Object>();
+        settMap.put("userNo", userInfo.getUserNo());
+        settMap.put("settStatus", status);
+        settMap.put("merchantRequestNo", merchantRequestNo);
+        settMap.put("beginDate", beginDate);
+        settMap.put("endDate", endDate);
+        PageBean pageBean = rpSettQueryService.querySettRecordListPage(pageParam, settMap);
 
-		String jsonString = JSON.toJSONString(pageBean.getRecordList());
-		String json = "{\"sEcho\":" + sEcho + ",\"iTotalRecords\":" + count.longValue() + ",\"iTotalDisplayRecords\":" + count.longValue() + ",\"aaData\":" + jsonString + "}";
-		return json;
-	}
+        Long count = Long.valueOf(pageBean.getTotalCount() + "");
+
+        String jsonString = JSON.toJSONString(pageBean.getRecordList());
+        String json = "{\"sEcho\":" + sEcho + ",\"iTotalRecords\":" + count.longValue() + ",\"iTotalDisplayRecords\":" + count.longValue() + ",\"aaData\":" + jsonString + "}";
+        return json;
+    }
 
 }

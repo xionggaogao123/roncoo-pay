@@ -33,76 +33,77 @@ import com.roncoo.pay.user.service.RpUserInfoService;
 /**
  * 用户信息
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
 @Controller
 @RequestMapping("/user/info")
 public class UserInfoController {
-	
-	@Autowired
-	private RpUserInfoService rpUserInfoService;
 
-	/**
-	 * 函数功能说明 ： 查询用户信息
-	 * 
-	 * @参数： @return
-	 * @return String
-	 * @throws
-	 */
-	@RequestMapping(value = "/list", method ={RequestMethod.POST,RequestMethod.GET})
-	public String list(RpUserInfo rpUserInfo,PageParam pageParam, Model model) {
-		PageBean pageBean = rpUserInfoService.listPage(pageParam, rpUserInfo);
-		model.addAttribute("pageBean", pageBean);
+    @Autowired
+    private RpUserInfoService rpUserInfoService;
+
+    /**
+     * 函数功能说明 ： 查询用户信息
+     *
+     * @return String
+     * @throws
+     * @参数： @return
+     */
+    @RequestMapping(value = "/list", method = {RequestMethod.POST, RequestMethod.GET})
+    public String list(RpUserInfo rpUserInfo, PageParam pageParam, Model model) {
+        PageBean pageBean = rpUserInfoService.listPage(pageParam, rpUserInfo);
+        model.addAttribute("pageBean", pageBean);
         model.addAttribute("pageParam", pageParam);
-        model.addAttribute("rpUserInfo",rpUserInfo);
-		return "user/info/list";
-	}
-	
-	/**
-	 * 函数功能说明 ：跳转添加
-	 * 
-	 * @参数： @return
-	 * @return String
-	 * @throws
-	 */
-	@RequiresPermissions("user:userInfo:add")
-	@RequestMapping(value = "/addUI", method = RequestMethod.GET)
-	public String addUI() {
-		
-		return "user/info/add";
-	}
-	
-	/**
-	 * 函数功能说明 ： 保存
-	 * 
-	 * @参数： @return
-	 * @return String
-	 * @throws
-	 */
-	@RequiresPermissions("user:userInfo:add")
-	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String add(Model model,@RequestParam("userName") String userName,@RequestParam("mobile") String mobile,@RequestParam("password") String password,DwzAjax dwz) {
-		rpUserInfoService.registerOffline(userName, mobile, password);
-		dwz.setStatusCode(DWZ.SUCCESS);
-		dwz.setMessage(DWZ.SUCCESS_MSG);
-		model.addAttribute("dwz", dwz);
-		return DWZ.AJAX_DONE;
-	}
-	
-	/**
-	 * 函数功能说明 ： 查询用户信息 查找带回
-	 * 
-	 * @参数： @return
-	 * @return String
-	 * @throws
-	 */
-	@RequestMapping(value = "/lookupList", method ={RequestMethod.POST,RequestMethod.GET})
-	public String lookupList(RpUserInfo rpUserInfo,PageParam pageParam, Model model) {
-		PageBean pageBean = rpUserInfoService.listPage(pageParam, rpUserInfo);
-		model.addAttribute("pageBean", pageBean);
+        model.addAttribute("rpUserInfo", rpUserInfo);
+        return "user/info/list";
+    }
+
+    /**
+     * 函数功能说明 ：跳转添加
+     *
+     * @return String
+     * @throws
+     * @参数： @return
+     */
+    @RequiresPermissions("user:userInfo:add")
+    @RequestMapping(value = "/addUI", method = RequestMethod.GET)
+    public String addUI() {
+
+        return "user/info/add";
+    }
+
+    /**
+     * 函数功能说明 ： 保存
+     *
+     * @return String
+     * @throws
+     * @参数： @return
+     */
+    @RequiresPermissions("user:userInfo:add")
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String add(Model model, @RequestParam("userName") String userName, @RequestParam("mobile") String mobile, @RequestParam("password") String password, DwzAjax dwz) {
+        rpUserInfoService.registerOffline(userName, mobile, password);
+        dwz.setStatusCode(DWZ.SUCCESS);
+        dwz.setMessage(DWZ.SUCCESS_MSG);
+        model.addAttribute("dwz", dwz);
+        return DWZ.AJAX_DONE;
+    }
+
+    /**
+     * 函数功能说明 ： 查询用户信息 查找带回
+     *
+     * @return String
+     * @throws
+     * @参数： @return
+     */
+    @RequestMapping(value = "/lookupList", method = {RequestMethod.POST, RequestMethod.GET})
+    public String lookupList(RpUserInfo rpUserInfo, PageParam pageParam, Model model) {
+        PageBean pageBean = rpUserInfoService.listPage(pageParam, rpUserInfo);
+        model.addAttribute("pageBean", pageBean);
         model.addAttribute("pageParam", pageParam);
-        model.addAttribute("rpUserInfo",rpUserInfo);
-		return "user/info/lookupList";
-	}
+        model.addAttribute("rpUserInfo", rpUserInfo);
+        return "user/info/lookupList";
+    }
 
 }

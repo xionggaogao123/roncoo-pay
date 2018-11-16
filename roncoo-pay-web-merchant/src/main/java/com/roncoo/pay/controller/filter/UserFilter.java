@@ -36,10 +36,11 @@ import com.roncoo.pay.user.entity.RpUserInfo;
 /**
  * 粗粒度权限控制拦截过滤器
  * 龙果学院：www.roncoo.com
+ *
  * @author zenghao
  */
 public class UserFilter implements Filter {
-    
+
     private static final Log LOG = LogFactory.getLog(UserFilter.class);
 
     public void destroy() {
@@ -47,13 +48,13 @@ public class UserFilter implements Filter {
     }
 
     public void doFilter(ServletRequest req, ServletResponse res,
-            FilterChain chain) throws IOException, ServletException {
+                         FilterChain chain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;
         String uri = request.getServletPath(); // 请求路径
         LOG.info("=== uri=" + uri);
-        
+
         // 获取登录的用户
-        RpUserInfo rpUserInfo = (RpUserInfo)request.getSession().getAttribute(ConstantClass.USER);
+        RpUserInfo rpUserInfo = (RpUserInfo) request.getSession().getAttribute(ConstantClass.USER);
         // 如果未登录,重定向到登录界面
         if (uri.contains("merchant") && rpUserInfo == null) {
             HttpServletResponse response = (HttpServletResponse) res;

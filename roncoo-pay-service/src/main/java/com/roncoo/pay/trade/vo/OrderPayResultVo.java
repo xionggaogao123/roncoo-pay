@@ -23,21 +23,30 @@ import java.math.BigDecimal;
 /**
  * <b>功能说明:支付结果展示实体
  * </b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
 public class OrderPayResultVo implements Serializable {
 
-    /** 状态 **/
+    /**
+     * 状态
+     **/
     private String status = PublicEnum.NO.name();
 
-    /** 金额 **/
+    /**
+     * 金额
+     **/
     private BigDecimal orderPrice;
 
-    /** 商户页面通知结果地址 **/
+    /**
+     * 商户页面通知结果地址
+     **/
     private String returnUrl;
 
-    /** 产品名称 **/
+    /**
+     * 产品名称
+     **/
     private String productName;
 
     public String getStatus() {

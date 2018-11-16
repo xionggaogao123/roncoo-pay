@@ -19,9 +19,10 @@ import com.roncoo.pay.common.core.dao.BaseDao;
 import com.roncoo.pay.user.entity.RpUserInfo;
 
 /**
- *   用户dao
+ * 用户dao
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
-public interface RpUserInfoDao  extends BaseDao<RpUserInfo> {
+public interface RpUserInfoDao extends BaseDao<RpUserInfo> {
 }

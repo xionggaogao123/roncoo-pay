@@ -23,89 +23,113 @@ import com.roncoo.pay.common.core.entity.BaseEntity;
 /**
  * 账户信息
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
 public class RpAccount extends BaseEntity implements Serializable {
 
-	/** 账户编号 **/
+    /**
+     * 账户编号
+     **/
     private String accountNo;
-    
-    /** 账户余额 **/
+
+    /**
+     * 账户余额
+     **/
     private BigDecimal balance;
 
-    /** 不可用余额 **/
+    /**
+     * 不可用余额
+     **/
     private BigDecimal unbalance;
 
-    /** 保证金 **/
+    /**
+     * 保证金
+     **/
     private BigDecimal securityMoney;
 
-    /** 总收益 **/
+    /**
+     * 总收益
+     **/
     private BigDecimal totalIncome;
 
-    /** 总支出 **/
+    /**
+     * 总支出
+     **/
     private BigDecimal totalExpend;
 
-    /** 今日收益  **/
+    /**
+     * 今日收益
+     **/
     private BigDecimal todayIncome;
 
-    /** 今日支出 **/
+    /**
+     * 今日支出
+     **/
     private BigDecimal todayExpend;
 
-    /** 账户类型 **/
+    /**
+     * 账户类型
+     **/
     private String accountType;
 
-    /** 可结算金额 **/
+    /**
+     * 可结算金额
+     **/
     private BigDecimal settAmount;
 
-    /** 用户编号 **/
+    /**
+     * 用户编号
+     **/
     private String userNo;
 
     private static final long serialVersionUID = 1L;
-    
+
     /************************* just show ************************************/
-	private String userName;
-	/************************* just show ************************************/
-	
-	public String getUserName() {
-		return userName;
-	}
+    private String userName;
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+    /************************* just show ************************************/
 
-	/**
-	 * 获取可用余额
-	 * 
-	 * @return
-	 */
-	public BigDecimal getAvailableBalance() {
-		return this.balance.subtract(unbalance);
-	}
+    public String getUserName() {
+        return userName;
+    }
 
-	/**
-	 * 获取实际可结算金额
-	 * 
-	 * @return
-	 */
-	public BigDecimal getAvailableSettAmount() {
-		BigDecimal subSettAmount = this.settAmount.subtract(unbalance);
-		if (getAvailableBalance().compareTo(subSettAmount) == -1) {
-			return getAvailableBalance();
-		}
-		return subSettAmount;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-	/**
-	 * 验证可用余额是否足够
-	 * 
-	 * @param amount
-	 * @return
-	 */
-	public boolean availableBalanceIsEnough(BigDecimal amount) {
+    /**
+     * 获取可用余额
+     *
+     * @return
+     */
+    public BigDecimal getAvailableBalance() {
+        return this.balance.subtract(unbalance);
+    }
 
-		return this.getAvailableBalance().compareTo(amount) >= 0;
-	}
+    /**
+     * 获取实际可结算金额
+     *
+     * @return
+     */
+    public BigDecimal getAvailableSettAmount() {
+        BigDecimal subSettAmount = this.settAmount.subtract(unbalance);
+        if (getAvailableBalance().compareTo(subSettAmount) == -1) {
+            return getAvailableBalance();
+        }
+        return subSettAmount;
+    }
+
+    /**
+     * 验证可用余额是否足够
+     *
+     * @param amount
+     * @return
+     */
+    public boolean availableBalanceIsEnough(BigDecimal amount) {
+
+        return this.getAvailableBalance().compareTo(amount) >= 0;
+    }
 
 
     public String getAccountNo() {

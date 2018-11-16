@@ -22,9 +22,9 @@ import com.roncoo.pay.permission.entity.PmsOperatorLog;
 
 /**
  * 权限操作员dao实现
- *
+ * <p>
  * 龙果学院：www.roncoo.com
- * 
+ *
  * @author：shenjialong
  */
 @Repository

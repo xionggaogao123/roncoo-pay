@@ -25,7 +25,9 @@ public enum NotifyTypeEnum {
     WEPAY_SEARCH("微信刷卡支付轮询");
 
 
-    /** 描述 */
+    /**
+     * 描述
+     */
     private String desc;
 
     private NotifyTypeEnum(String desc) {
@@ -52,7 +54,7 @@ public enum NotifyTypeEnum {
         return enumMap;
     }
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @SuppressWarnings({"rawtypes", "unchecked"})
     public static List toList() {
         NotifyTypeEnum[] ary = NotifyTypeEnum.values();
         List list = new ArrayList();

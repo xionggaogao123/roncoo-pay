@@ -22,15 +22,18 @@ import java.util.Map;
 
 /**
  * <b>功能说明:支付宝订单状态枚举类.</b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
 public enum AliPayTradeStateEnum {
-    TRADE_FINISHED ("支付完成"),
-    TRADE_SUCCESS ("支付成功"),
+    TRADE_FINISHED("支付完成"),
+    TRADE_SUCCESS("支付成功"),
     FAIL("支付失败");
 
-    /** 描述 */
+    /**
+     * 描述
+     */
     private String desc;
 
     private AliPayTradeStateEnum(String desc) {
@@ -57,7 +60,7 @@ public enum AliPayTradeStateEnum {
         return enumMap;
     }
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @SuppressWarnings({"rawtypes", "unchecked"})
     public static List toList() {
         AliPayTradeStateEnum[] ary = AliPayTradeStateEnum.values();
         List list = new ArrayList();

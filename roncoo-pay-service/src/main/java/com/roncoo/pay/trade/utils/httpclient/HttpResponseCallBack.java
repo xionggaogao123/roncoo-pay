@@ -21,10 +21,11 @@ import java.io.InputStream;
 /**
  * <b>功能说明:
  * </b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
 public interface HttpResponseCallBack {
 
-	public void processResponse(InputStream responseBody) throws IOException;
+    public void processResponse(InputStream responseBody) throws IOException;
 }

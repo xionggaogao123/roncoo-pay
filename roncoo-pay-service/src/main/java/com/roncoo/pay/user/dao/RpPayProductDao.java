@@ -21,7 +21,8 @@ import com.roncoo.pay.user.entity.RpPayProduct;
 /**
  * 支付产品dao
  * 龙果学院：www.roncoo.com
+ *
  * @author：zenghao
  */
-public interface RpPayProductDao  extends BaseDao<RpPayProduct> {
+public interface RpPayProductDao extends BaseDao<RpPayProduct> {
 }

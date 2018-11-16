@@ -22,69 +22,110 @@ import java.io.Serializable;
 
 /**
  * <b>功能说明:微信预支付实体类</b>
- * @author  Peter
- * <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
+ *
+ * @author Peter
+ *         <a href="http://www.roncoo.com">龙果学院(www.roncoo.com)</a>
  */
 public class WeiXinPrePay implements Serializable {
 
-    /** 公众账号ID 必填 **/
+    /**
+     * 公众账号ID 必填
+     **/
     private String appid;
 
-    /** 商户号 必填 **/
+    /**
+     * 商户号 必填
+     **/
     private String mchId;
 
-    /** 设备号  终端设备号(门店号或收银设备ID)，注意：PC网页或公众号内支付请传"WEB" 默认为'WEB'**/
+    /**
+     * 设备号  终端设备号(门店号或收银设备ID)，注意：PC网页或公众号内支付请传"WEB" 默认为'WEB'
+     **/
     private String deviceInfo = "WEB";
 
-    /** 随机字符串 **/
+    /**
+     * 随机字符串
+     **/
     private String nonceStr = StringUtil.get32UUID();
 
-    /** 签名 **/
+    /**
+     * 签名
+     **/
     private String sign;
 
-    /** 商品描述 **/
+    /**
+     * 商品描述
+     **/
     private String body;
 
-    /** 商品详情 **/
+    /**
+     * 商品详情
+     **/
     private String detail;
 
-    /** 附加数据 **/
+    /**
+     * 附加数据
+     **/
     private String attach;
 
-    /** 商户订单号 **/
+    /**
+     * 商户订单号
+     **/
     private String outTradeNo;
 
-    /** 货币类型 默认为人民币 **/
+    /**
+     * 货币类型 默认为人民币
+     **/
     private String feeType = "CNY";
 
-    /** 总金额 **/
+    /**
+     * 总金额
+     **/
     private Integer totalFee;
 
-    /** 终端IP **/
+    /**
+     * 终端IP
+     **/
     private String spbillCreateIp;
 
-    /** 交易起始时间 **/
+    /**
+     * 交易起始时间
+     **/
     private String timeStart;
 
-    /** 交易结束时间 **/
+    /**
+     * 交易结束时间
+     **/
     private String timeExpire;
 
-    /** 商品标记 **/
+    /**
+     * 商品标记
+     **/
     private String goodsTag;
 
-    /** 通知地址 **/
+    /**
+     * 通知地址
+     **/
     private String notifyUrl;
 
-    /** 交易类型 **/
+    /**
+     * 交易类型
+     **/
     private WeiXinTradeTypeEnum tradeType;
 
-    /** 商品ID **/
+    /**
+     * 商品ID
+     **/
     private String productId;
 
-    /** 制定支付方式 **/
+    /**
+     * 制定支付方式
+     **/
     private String limitPay;
 
-    /** 用户标识 **/
+    /**
+     * 用户标识
+     **/
     private String openid;
 
     public String getAppid() {
